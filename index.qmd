@@ -2,19 +2,17 @@
 title: "Md Allama Ikbal Sijan"
 about:
   template: jolla
-  image: profile.jpg
+  image: sijan-picture.jpg
   links:
     - icon: twitter
       text: twitter
       href: https://twitter.com
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/Sijan14
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Hi there! I'm Sijan (Yess! I go by my last name-I will tell you the story someday!). I’m a Ph.D. candidate in Industrial-Organizational Psychology with a concentration in Data Science. I also teach undergraduate statistics and have a passion for discussing topics like assessment development, fairness, validity, psychometrics, data visualization, natural language processing (NLP), and artificial intelligence (AI). Poke around my website to learn more!
 
 ```{r}
 1 + 1

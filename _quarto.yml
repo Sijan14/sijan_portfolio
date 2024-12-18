@@ -3,17 +3,22 @@ project:
 
 website:
   title: "Sijan"
+  page-footer: 
+    center: "Copyright 2024, Md Allama Ikbal Sijan" 
   navbar:
+    search: true
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - projects.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: Lux
     css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 
