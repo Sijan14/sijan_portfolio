@@ -13,7 +13,7 @@ website:
         text: Home
       - about.qmd
       - projects.qmd
-      - blogs.qmd
+      - posts.qmd
 
 format:
   html:
@@ -21,6 +21,8 @@ format:
     css: styles.css
     toc: true
     page-layout: full
+    embed-resources: true
+    allow-raw-html: true
 
 editor: visual
 

@@ -1,10 +1,24 @@
 [
   {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "myblog",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Md Allama Ikbal Sijan",
     "section": "",
-    "text": "Hi there! I’m Sijan (Yess! I go by my last name-I will tell you the story someday!). I’m a Ph.D. candidate in Industrial-Organizational Psychology with a concentration in Data Science. I also teach undergraduate statistics and have a passion for discussing topics like assessment development, fairness, validity, psychometrics, data visualization, natural language processing (NLP), and artificial intelligence (AI). Poke around my website to learn more!\n\n1 + 1\n\n[1] 2"
+    "text": "Hi there! I’m Sijan (Yess! I go by my last name-I will tell you the story someday!). I’m a Ph.D. candidate in Industrial-Organizational Psychology with a concentration in Data Science. I also teach undergraduate statistics and have a passion for discussing topics like assessment development, fairness, validity, psychometrics, data visualization, natural language processing (NLP), and artificial intelligence (AI). Poke around my website to learn more!\n\n \n\nwidget credit: richpauloo.github.io"
+  },
+  {
+    "objectID": "projects.html#my-shiny-app",
+    "href": "projects.html#my-shiny-app",
+    "title": "Projects",
+    "section": "My Shiny App",
+    "text": "My Shiny App"
   },
   {
     "objectID": "about.html",
@@ -40,5 +54,19 @@
     "title": "About",
     "section": "🎙️Presentations",
     "text": "🎙️Presentations\n\nSijan, M. (Co-chair), Belwalkar, B. B. (Co-chair) & Mracek, D. (Discussant) (2025). Power of NLP and LLMs: Turning I/O Research and Practice into a Textual Adventure [Symposium]. Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.*\nHuynh, C., Elfeki, Y., Sijan, M. (2025). Modeling Latent Constructs in SJT Using Pseudo-Factor Analysis [Poster]. Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.*\nSijan, M., Bixter, M. T. (2024). Using NLP to Predict Job Satisfaction and Turnover Intention [Poster Presentation]. The Psychonomic Society Annual Meeting, New York, NY, United States.\nBragger, J., Helisch, R., Buczek, E., Hunt, L., Sijan, M., Abbasi, F., Filstein, T., Myszko, Z., Sherman, C., & Lakusta, L. (2024). Neurodiversity in Leadership: The Relationship Between Theory of Mind and Leadership Roles, and Possible Implications for Neurodivergent Workers [Presentation]. Interdisciplinary Perspectives on Leadership Symposium, Thessaloniki, Greece.\nSijan, M., Kramer, M. (Co-Chair), Kulas, J. (Co-Chair), Helisch, R., Lancuna, L., Defabiis, M., Hunt, L., Notari, K., (2024). Unlocking the value of IO Psychology Student Consulting in Higher Education [Panel Presentation]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.\nElfeki, Y., Huynh, C., Sijan, M., Salter, N. P. (2024). An Exploration of Masculinity and Femininity Perceptions Across Monoracial and Biracial Identities using StyleGAN Imagery [Symposium]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.\nHunt, L., Bragger, J., Kubu, G., Abbasi, F., & Sijan, M. (2024). Leading the Goals’ Rush: How leadership mindsets make all the difference [Poster Presentation]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.\nSijan M. (2022). Perception of Trust Based on Parenthood Status [Poster Presentation]. 94th Annual MPA (Midwestern Psychological Association) Conference. Chicago, IL, United States."
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "What is I/O Psychology\n\n\n\n\n\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nYou will know soon-enough\n\n\n\n\n\n\nOct 24, 2022\n\n\nMd Allama Ikbal Sijan\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-12-18-first-blog-post/index.html",
+    "href": "posts/2024-12-18-first-blog-post/index.html",
+    "title": "What is I/O Psychology",
+    "section": "",
+    "text": "Here goes my first ever blog. It’s working! Hooray!!\n\n\n\nCitationBibTeX citation:@online{allama ikbal sijan2022,\n  author = {Allama Ikbal Sijan, Md},\n  title = {What Is {I/O} {Psychology}},\n  date = {2022-10-24},\n  url = {https://sijan14.github.io/sijan_portfolio/posts/2024-12-18-first-blog-post/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAllama Ikbal Sijan, Md. 2022. “What Is I/O Psychology.”\nOctober 24, 2022. https://sijan14.github.io/sijan_portfolio/posts/2024-12-18-first-blog-post/."
   }
 ]

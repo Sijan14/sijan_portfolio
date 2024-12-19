@@ -14,6 +14,12 @@ about:
 
 Hi there! I'm Sijan (Yess! I go by my last name-I will tell you the story someday!). I’m a Ph.D. candidate in Industrial-Organizational Psychology with a concentration in Data Science. I also teach undergraduate statistics and have a passion for discussing topics like assessment development, fairness, validity, psychometrics, data visualization, natural language processing (NLP), and artificial intelligence (AI). Poke around my website to learn more!
 
-```{r}
-1 + 1
-```
+<div style="margin: 20px 0;">
+  <iframe 
+    scrolling="no" 
+    src="https://richpauloo.github.io/htmlwidgets/waves/index.html" 
+    style="border: 0; width: 75%; height: 200px;">
+  </iframe>
+</div>
+
+<small style="font-size: 0.8em;">widget credit: <a href="https://richpauloo.github.io" target="_blank">richpauloo.github.io</a></small>

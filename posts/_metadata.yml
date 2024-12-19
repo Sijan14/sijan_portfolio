@@ -1,0 +1,14 @@
+# options specified here will apply to all posts in this folder
+
+# re-render posts only when a change to the source file is made ----
+freeze: auto
+
+# enable banner style title blocks ----
+title-block-banner: true
+
+# author name
+author:
+  - name: Md Allama Ikbal Sijan
+    url: https://sijan14.github.io/sijan_portfolio
+    orcid: 0009-0002-2400-2804
+    affiliation: Doctorate of Industrial-Organizational Psychology (Data Science) @ Montclair State University
