@@ -23,6 +23,7 @@ format:
     page-layout: full
     embed-resources: true
     allow-raw-html: true
+    smooth-scroll: true
 
 editor: visual
 

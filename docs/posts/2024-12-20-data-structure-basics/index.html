@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Md Allama Ikbal Sijan">
-<meta name="dcterms.date" content="2024-12-18">
+<meta name="dcterms.date" content="2024-12-20">
 <meta name="description" content="Learn what data structures are, why they matter, and how they can improve the efficiency of your code. This blog introduces key concepts in an easy-to-understand way for those just starting their coding journey.">
 
 <title>Sijan - What Are Data Structures? A Simple Introduction for Beginners</title>
@@ -4475,6 +4475,21 @@ vertical-align: -.125em;
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+.quarto-title-block .quarto-title-banner h1,
+.quarto-title-block .quarto-title-banner h2,
+.quarto-title-block .quarto-title-banner h3,
+.quarto-title-block .quarto-title-banner h4,
+.quarto-title-block .quarto-title-banner h5,
+.quarto-title-block .quarto-title-banner h6
+{
+color: #f0f0f0;
+}
+.quarto-title-block .quarto-title-banner {
+color: #f0f0f0;
+}
+</style>
 
 
 <style type="text/css">
@@ -4557,7 +4572,7 @@ vertical-align: -.125em;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 18, 2024</p>
+        <p class="date">December 20, 2024</p>
       </div>
     </div>
     
@@ -4573,9 +4588,7 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-are-data-structures-a-simple-introduction-for-beginners" id="toc-what-are-data-structures-a-simple-introduction-for-beginners" class="nav-link active" data-scroll-target="#what-are-data-structures-a-simple-introduction-for-beginners">What Are Data Structures? A Simple Introduction for Beginners</a>
-  <ul class="collapse">
-  <li><a href="#data-type-vs.-data-structure" id="toc-data-type-vs.-data-structure" class="nav-link" data-scroll-target="#data-type-vs.-data-structure">Data Type vs. Data Structure</a></li>
+  <li><a href="#data-type-vs.-data-structure" id="toc-data-type-vs.-data-structure" class="nav-link active" data-scroll-target="#data-type-vs.-data-structure">Data Type vs. Data Structure</a></li>
   <li><a href="#common-operations" id="toc-common-operations" class="nav-link" data-scroll-target="#common-operations">Common Operations</a></li>
   <li><a href="#why-use-data-structures" id="toc-why-use-data-structures" class="nav-link" data-scroll-target="#why-use-data-structures">Why Use Data Structures?</a></li>
   <li><a href="#example-storing-student-grades" id="toc-example-storing-student-grades" class="nav-link" data-scroll-target="#example-storing-student-grades">Example: Storing Student Grades</a></li>
@@ -4584,7 +4597,7 @@ vertical-align: -.125em;
   <li><a href="#common-adts" id="toc-common-adts" class="nav-link" data-scroll-target="#common-adts">Common ADTs</a></li>
   <li><a href="#real-world-applications" id="toc-real-world-applications" class="nav-link" data-scroll-target="#real-world-applications">Real World Applications</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -4594,8 +4607,6 @@ vertical-align: -.125em;
 
 
 
-<section id="what-are-data-structures-a-simple-introduction-for-beginners" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-data-structures-a-simple-introduction-for-beginners">What Are Data Structures? A Simple Introduction for Beginners</h2>
 <p>When working with data, organizing, storing, and performing operations on it efficiently is key. This is where data structures come into play. In simple terms, a data structure is a way of organizing and managing data so that it can be accessed and modified efficiently.</p>
 <section id="data-type-vs.-data-structure" class="level3">
 <h3 class="anchored" data-anchor-id="data-type-vs.-data-structure">Data Type vs. Data Structure</h3>
@@ -4637,63 +4648,57 @@ vertical-align: -.125em;
 <p>Instead, you can use an array to store the grades:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now you can perform operations more efficiently:</p>
-<ul>
-<li>Access a specific grade: Retrieve the second student’s grade:</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>second_grade <span class="op">=</span> student_grades[<span class="dv">1</span>]  <span class="co"># Outputs 90</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Update a grade: Add extra credit to the third student’s grade:</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>student_grades[<span class="dv">2</span>] <span class="op">+=</span> <span class="dv">5</span>  <span class="co"># Updates 78 to 83</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Calculate the average grade: Compute the average for all students:</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>average_grade <span class="op">=</span> <span class="bu">sum</span>(student_grades) <span class="op">/</span> <span class="bu">len</span>(student_grades)  <span class="co"># Outputs 86.6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Add a new student: Include another student’s grade:</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>student_grades.append(<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Remove a student: Remove the grade of a student who dropped out:</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>student_grades.pop(<span class="dv">1</span>)  <span class="co"># Removes the second student&#39;s grade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Access a specific grade: Retrieve the second student&#39;s grade</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>second_grade <span class="op">=</span> student_grades[<span class="dv">1</span>]  <span class="co"># Outputs 90</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Update a grade: Add extra credit to the third student&#39;s grade</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>student_grades[<span class="dv">2</span>] <span class="op">+=</span> <span class="dv">5</span>  <span class="co"># Updates 78 to 83</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the average grade: Compute the average for all students</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>average_grade <span class="op">=</span> <span class="bu">sum</span>(student_grades) <span class="op">/</span> <span class="bu">len</span>(student_grades)  <span class="co"># Outputs 86.6</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new student: Include another student&#39;s grade</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>student_grades.append(<span class="dv">95</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove a student: Remove the grade of a student who dropped out</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>student_grades.pop(<span class="dv">1</span>)  <span class="co"># Removes the second student&#39;s grade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="with-a-data-structure-hash-table" class="level4">
 <h4 class="anchored" data-anchor-id="with-a-data-structure-hash-table">With a Data Structure (Hash Table)</h4>
 <p>If you need to associate grades with student names for better clarity, a hash table (dictionary) works even better:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Sijan&quot;</span>: <span class="dv">85</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bella&quot;</span>: <span class="dv">90</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alex&quot;</span>: <span class="dv">78</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Taylor&quot;</span>: <span class="dv">92</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Jordan&quot;</span>: <span class="dv">88</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Sijan&quot;</span>: <span class="dv">85</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bella&quot;</span>: <span class="dv">90</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alex&quot;</span>: <span class="dv">78</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Taylor&quot;</span>: <span class="dv">92</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Jordan&quot;</span>: <span class="dv">88</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>With this structure:</p>
 <ul>
 <li>Accessing a grade by name is straightforward:</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bella_grade <span class="op">=</span> student_grades[<span class="st">&quot;Bella&quot;</span>]  <span class="co"># Outputs 90</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bella_grade <span class="op">=</span> student_grades[<span class="st">&quot;Bella&quot;</span>]  <span class="co"># Outputs 90</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Updating grades is intuitive:</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>student_grades[<span class="st">&quot;Alex&quot;</span>] <span class="op">+=</span> <span class="dv">5</span>  <span class="co"># Updates Alex&#39;s grade to 83</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>student_grades[<span class="st">&quot;Alex&quot;</span>] <span class="op">+=</span> <span class="dv">5</span>  <span class="co"># Updates Alex&#39;s grade to 83</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Adding or removing students is easy:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>student_grades[<span class="st">&quot;Chris&quot;</span>] <span class="op">=</span> <span class="dv">95</span>  <span class="co"># Adds Chris with a grade of 95</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> student_grades[<span class="st">&quot;Taylor&quot;</span>]  <span class="co"># Removes Taylor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>student_grades[<span class="st">&quot;Chris&quot;</span>] <span class="op">=</span> <span class="dv">95</span>  <span class="co"># Adds Chris with a grade of 95</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> student_grades[<span class="st">&quot;Taylor&quot;</span>]  <span class="co"># Removes Taylor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="common-data-structures" class="level3">
 <h3 class="anchored" data-anchor-id="common-data-structures">Common Data Structures</h3>
 <p>Understanding the unique characteristics of different data structures—whether they are ordered or unordered, and what operations they excel at—helps in selecting the best one for a given task.</p>
 <ul>
-<li><em>Array</em>: An ordered collection of elements, best for quick access and iteration.</li>
-<li><em>Linked List</em>: An ordered, dynamic structure where elements are linked, ideal for frequent insertions and deletions.</li>
-<li><em>Trees</em>: A hierarchical, ordered structure, excellent for representing hierarchical relationships and performing searches.</li>
-<li><em>Hash Table</em>: An unordered structure using key-value pairs, best for fast lookups and retrievals.</li>
-<li><em>Heap</em>: A specialized tree-based structure, great for efficient retrieval of the smallest or largest element.</li>
-<li><em>Graphs</em>: A network of nodes connected by edges, perfect for modeling relationships and performing pathfinding operations.</li>
+<li><p><em>Array</em>: An ordered collection of elements, best for quick access and iteration.</p></li>
+<li><p><em>Linked List</em>: An ordered, dynamic structure where elements are linked, ideal for frequent insertions and deletions.</p></li>
+<li><p><em>Trees</em>: A hierarchical, ordered structure, excellent for representing hierarchical relationships and performing searches.</p></li>
+<li><p><em>Hash Table</em>: An unordered structure using key-value pairs, best for fast lookups and retrievals.</p></li>
+<li><p><em>Heap</em>: A specialized tree-based structure, great for efficient retrieval of the smallest or largest element.</p></li>
+<li><p><em>Graphs</em>: A network of nodes connected by edges, perfect for modeling relationships and performing pathfinding operations.</p></li>
 </ul>
 </section>
 <section id="data-structures-vs.-abstract-data-types-adt" class="level3">
@@ -4735,35 +4740,25 @@ vertical-align: -.125em;
 <p>These are just a few examples of how data structures are applied in the real world, and there are countless other uses that I haven’t covered here. It took me some time to truly grasp the key differences between data structures and other data types. This brief introduction to data structures serves as a way for me to reinforce my own understanding and, hopefully, help others in the process.</p>
 <p>Data structures are fundamental tools for organizing and managing data efficiently across various real-world applications. From simple structures like arrays and linked lists to more complex ones like hash tables and graphs, each data structure has its own purpose based on the specific problem you’re trying to solve. Understanding these practical applications enables us to select the right data structure, optimize performance, and tackle challenges more effectively.</p>
 <p>If you found this post helpful or have any feedback, I’d love to hear your thoughts—feel free to leave a comment below!</p>
-<div id="upvote-container">
-<pre><code>&lt;button id=&quot;upvote-btn&quot;&gt;👍 Upvote&lt;/button&gt;
-&lt;span id=&quot;vote-count&quot;&gt;0&lt;/span&gt;</code></pre>
-</div>
-<script type="text/javascript">
-    let voteCount = parseInt(localStorage.getItem('voteCount')) || 0;
-    document.getElementById('vote-count').textContent = voteCount
-    document.getElementById('upvote-btn').addEventListener('click', function() {
-        voteCount++;
-        localStorage.setItem('voteCount', voteCount);
-        document.getElementById('vote-count').textContent = voteCount;
-    });
-</script>
-
-
 </section>
+<section id="reference" class="level3">
+<h3 class="anchored" data-anchor-id="reference">Reference</h3>
+<p>zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).</p>
+
+
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{allama ikbal sijan2024,
   author = {Allama Ikbal Sijan, Md},
   title = {What {Are} {Data} {Structures?} {A} {Simple} {Introduction}
     for {Beginners}},
-  date = {2024-12-18},
-  url = {https://sijan14.github.io/sijan_portfolio/posts/2024-12-18-first-blog-post/},
+  date = {2024-12-20},
+  url = {https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-allama ikbal sijan2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Allama Ikbal Sijan, Md. 2024. <span>“What Are Data Structures? A Simple
-Introduction for Beginners.”</span> December 18, 2024. <a href="https://sijan14.github.io/sijan_portfolio/posts/2024-12-18-first-blog-post/">https://sijan14.github.io/sijan_portfolio/posts/2024-12-18-first-blog-post/</a>.
+Introduction for Beginners.”</span> December 20, 2024. <a href="https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/">https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -4998,6 +4993,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="data:application/javascript; charset=utf-8;base64,KCgpPT57Y29uc3QgZT13aW5kb3cubWF0Y2hNZWRpYSgiKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKSIpLm1hdGNoZXM/ImdpdGh1Yi1kYXJrIjoiZ2l0aHViLWxpZ2h0Iix0PW5ldyBVUkwobG9jYXRpb24uaHJlZiksbj10LnNlYXJjaFBhcmFtcy5nZXQoInV0dGVyYW5jZXMiKTtuJiYobG9jYWxTdG9yYWdlLnNldEl0ZW0oInV0dGVyYW5jZXMtc2Vzc2lvbiIsbiksdC5zZWFyY2hQYXJhbXMuZGVsZXRlKCJ1dHRlcmFuY2VzIiksaGlzdG9yeS5yZXBsYWNlU3RhdGUodm9pZCAwLGRvY3VtZW50LnRpdGxlLHQuaHJlZikpO2xldCByPWRvY3VtZW50LmN1cnJlbnRTY3JpcHQ7dm9pZCAwPT09ciYmKHI9ZG9jdW1lbnQucXVlcnlTZWxlY3Rvcignc2NyaXB0W3NyY149Imh0dHBzOi8vdXR0ZXJhbmMuZXMvY2xpZW50LmpzIl0sc2NyaXB0W3NyY149Imh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9jbGllbnQuanMiXScpKTtjb25zdCBpPXt9O2ZvcihsZXQgZT0wO2U8ci5hdHRyaWJ1dGVzLmxlbmd0aDtlKyspe2NvbnN0IHQ9ci5hdHRyaWJ1dGVzLml0ZW0oZSk7aVt0Lm5hbWUucmVwbGFjZSgvXmRhdGEtLywiIildPXQudmFsdWV9InByZWZlcnJlZC1jb2xvci1zY2hlbWUiPT09aS50aGVtZSYmKGkudGhlbWU9ZSk7Y29uc3QgYT1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJsaW5rW3JlbD0nY2Fub25pY2FsJ10iKTtpLnVybD1hP2EuaHJlZjp0Lm9yaWdpbit0LnBhdGhuYW1lK3Quc2VhcmNoLGkub3JpZ2luPXQub3JpZ2luLGkucGF0aG5hbWU9dC5wYXRobmFtZS5sZW5ndGg8Mj8iaW5kZXgiOnQucGF0aG5hbWUuc3Vic3RyKDEpLnJlcGxhY2UoL1wuXHcrJC8sIiIpLGkudGl0bGU9ZG9jdW1lbnQudGl0bGU7Y29uc3Qgcz1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJtZXRhW25hbWU9J2Rlc2NyaXB0aW9uJ10iKTtpLmRlc2NyaXB0aW9uPXM/cy5jb250ZW50OiIiO2NvbnN0IG89ZW5jb2RlVVJJQ29tcG9uZW50KGkuZGVzY3JpcHRpb24pLmxlbmd0aDtvPjFlMyYmKGkuZGVzY3JpcHRpb249aS5kZXNjcmlwdGlvbi5zdWJzdHIoMCxNYXRoLmZsb29yKDFlMyppLmRlc2NyaXB0aW9uLmxlbmd0aC9vKSkpO2NvbnN0IGM9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcigibWV0YVtwcm9wZXJ0eT0nb2c6dGl0bGUnXSxtZXRhW25hbWU9J29nOnRpdGxlJ10iKTtpWyJvZzp0aXRsZSJdPWM/Yy5jb250ZW50OiIiLGkuc2Vzc2lvbj1ufHxsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgidXR0ZXJhbmNlcy1zZXNzaW9uIil8fCIiLGRvY3VtZW50LmhlYWQuaW5zZXJ0QWRqYWNlbnRIVE1MKCJhZnRlcmJlZ2luIiwiPHN0eWxlPlxuICAgIC51dHRlcmFuY2VzIHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIG1heC13aWR0aDogNzYwcHg7XG4gICAgICBtYXJnaW4tbGVmdDogYXV0bztcbiAgICAgIG1hcmdpbi1yaWdodDogYXV0bztcbiAgICB9XG4gICAgLnV0dGVyYW5jZXMtZnJhbWUge1xuICAgICAgY29sb3Itc2NoZW1lOiBsaWdodDtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGxlZnQ6IDA7XG4gICAgICByaWdodDogMDtcbiAgICAgIHdpZHRoOiAxcHg7XG4gICAgICBtaW4td2lkdGg6IDEwMCU7XG4gICAgICBtYXgtd2lkdGg6IDEwMCU7XG4gICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICBib3JkZXI6IDA7XG4gICAgfVxuICA8L3N0eWxlPiIpO2NvbnN0IGw9ci5zcmMubWF0Y2goL15odHRwczpcL1wvdXR0ZXJhbmNcLmVzfGh0dHA6XC9cL2xvY2FsaG9zdDpcZCsvKVswXSxoPWAke2x9L3V0dGVyYW5jZXMuaHRtbGA7ci5pbnNlcnRBZGphY2VudEhUTUwoImFmdGVyZW5kIixgPGRpdiBjbGFzcz0idXR0ZXJhbmNlcyI+XG4gICAgPGlmcmFtZSBjbGFzcz0idXR0ZXJhbmNlcy1mcmFtZSIgdGl0bGU9IkNvbW1lbnRzIiBzY3JvbGxpbmc9Im5vIiBzcmM9IiR7aH0/JHtuZXcgVVJMU2VhcmNoUGFyYW1zKGkpfSIgbG9hZGluZz0ibGF6eSI+PC9pZnJhbWU+XG4gIDwvZGl2PmApO2NvbnN0IG09ci5uZXh0RWxlbWVudFNpYmxpbmc7ci5wYXJlbnRFbGVtZW50LnJlbW92ZUNoaWxkKHIpLGFkZEV2ZW50TGlzdGVuZXIoIm1lc3NhZ2UiLChlPT57aWYoZS5vcmlnaW4hPT1sKXJldHVybjtjb25zdCB0PWUuZGF0YTt0JiYicmVzaXplIj09PXQudHlwZSYmdC5oZWlnaHQmJihtLnN0eWxlLmhlaWdodD1gJHt0LmhlaWdodH1weGApfSkpfSkoKTsKLy8jIHNvdXJjZU1hcHBpbmdVUkw9Y2xpZW50LmpzLm1hcAo=" repo="quarto-dev/quarto-docs" issue-term="pathname" theme="github-light" crossorigin="anonymous" async>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -5013,4 +5010,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script>!function(t,e){"function"==typeof define&&define.amd?define([],e()):"object"==typeof module&&module.exports?module.exports=e():function n(){document&&document.body?t.zenscroll=e():setTimeout(n,9)}()}(this,function(){"use strict";var t=function(t){return t&&"getComputedStyle"in window&&"smooth"===window.getComputedStyle(t)["scroll-behavior"]};if("undefined"==typeof window||!("document"in window))return{};var e=function(e,n,o){n=n||999,o||0===o||(o=9);var i,r=function(t){i=t},u=function(){clearTimeout(i),r(0)},c=function(t){return Math.max(0,e.getTopOf(t)-o)},a=function(o,i,c){if(u(),0===i||i&&i<0||t(e.body))e.toY(o),c&&c();else{var a=e.getY(),f=Math.max(0,o)-a,s=(new Date).getTime();i=i||Math.min(Math.abs(f),n),function t(){r(setTimeout(function(){var n=Math.min(1,((new Date).getTime()-s)/i),o=Math.max(0,Math.floor(a+f*(n<.5?2*n*n:n*(4-2*n)-1)));e.toY(o),n<1&&e.getHeight()+o<e.body.scrollHeight?t():(setTimeout(u,99),c&&c())},9))}()}},f=function(t,e,n){a(c(t),e,n)},s=function(t,n,i){var r=t.getBoundingClientRect().height,u=e.getTopOf(t)+r,s=e.getHeight(),l=e.getY(),d=l+s;c(t)<l||r+o>s?f(t,n,i):u+o>d?a(u-s+o,n,i):i&&i()},l=function(t,n,o,i){a(Math.max(0,e.getTopOf(t)-e.getHeight()/2+(o||t.getBoundingClientRect().height/2)),n,i)};return{setup:function(t,e){return(0===t||t)&&(n=t),(0===e||e)&&(o=e),{defaultDuration:n,edgeOffset:o}},to:f,toY:a,intoView:s,center:l,stop:u,moving:function(){return!!i},getY:e.getY,getTopOf:e.getTopOf}},n=document.documentElement,o=function(){return window.scrollY||n.scrollTop},i=e({body:document.scrollingElement||document.body,toY:function(t){window.scrollTo(0,t)},getY:o,getHeight:function(){return window.innerHeight||n.clientHeight},getTopOf:function(t){return t.getBoundingClientRect().top+o()-n.offsetTop}});if(i.createScroller=function(t,o,i){return e({body:t,toY:function(e){t.scrollTop=e},getY:function(){return t.scrollTop},getHeight:function(){return Math.min(t.clientHeight,window.innerHeight||n.clientHeight)},getTopOf:function(t){return t.offsetTop}},o,i)},"addEventListener"in window&&!window.noZensmooth&&!t(document.body)){var r="history"in window&&"pushState"in history,u=r&&"scrollRestoration"in history;u&&(history.scrollRestoration="auto"),window.addEventListener("load",function(){u&&(setTimeout(function(){history.scrollRestoration="manual"},9),window.addEventListener("popstate",function(t){t.state&&"zenscrollY"in t.state&&i.toY(t.state.zenscrollY)},!1)),window.location.hash&&setTimeout(function(){var t=i.setup().edgeOffset;if(t){var e=document.getElementById(window.location.href.split("#")[1]);if(e){var n=Math.max(0,i.getTopOf(e)-t),o=i.getY()-n;0<=o&&o<9&&window.scrollTo(0,n)}}},9)},!1);var c=new RegExp("(^|\\s)noZensmooth(\\s|$)");window.addEventListener("click",function(t){for(var e=t.target;e&&"A"!==e.tagName;)e=e.parentNode;if(!(!e||1!==t.which||t.shiftKey||t.metaKey||t.ctrlKey||t.altKey)){if(u){var n=history.state&&"object"==typeof history.state?history.state:{};n.zenscrollY=i.getY();try{history.replaceState(n,"")}catch(t){}}var o=e.getAttribute("href")||"";if(0===o.indexOf("#")&&!c.test(e.className)){var a=0,f=document.getElementById(o.substring(1));if("#"!==o){if(!f)return;a=i.getTopOf(f)}t.preventDefault();var s=function(){window.location=o},l=i.setup().edgeOffset;l&&(a=Math.max(0,a-l),r&&(s=function(){history.pushState({},"",o)})),i.toY(a,null,s)}}},!1)}return i});</script>
 </body></html>
