@@ -4,6 +4,8 @@ project:
 
 website:
   title: "Sijan"
+  site-url: https://sijan14.github.io/sijan_portfolio/
+  description: "Sijan's portfolio and blog"
   page-footer: 
     center: "Copyright 2024, Md Allama Ikbal Sijan" 
   navbar:
