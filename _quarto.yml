@@ -16,6 +16,9 @@ website:
       - about.qmd
       - projects.qmd
       - posts.qmd
+    right:
+      - icon: rss
+        href: sitemap.xml
 
 format:
   html:
