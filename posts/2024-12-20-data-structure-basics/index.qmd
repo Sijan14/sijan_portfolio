@@ -7,7 +7,6 @@ citation:
   url: https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/ 
 image: ds_ai.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
-
 format:
   html:
     markdown: true
@@ -189,20 +188,6 @@ Data structures are fundamental tools for organizing and managing data efficient
 If you found this post helpful or have any feedback, I’d love to hear your thoughts—feel free to leave a comment below!
 
 ### Reference
-zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024). 
+zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
-<script src="https://giscus.app/client.js"
-        data-repo="Sijan14/sijan_portfolio"
-        data-repo-id="R_kgDONe8mDA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDONe8mDM4Clf-0"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="noborder_light"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
+{{ include "giscus.html" }}
