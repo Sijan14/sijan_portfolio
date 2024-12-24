@@ -11,6 +11,7 @@ draft: false # setting this to `true` will prevent your post from appearing on y
 format:
   html:
     markdown: true
+    allow-raw-html: true
     highlight-style: tango
 ---
 
