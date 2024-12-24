@@ -29,6 +29,8 @@ format:
     embed-resources: true
     allow-raw-html: true
     smooth-scroll: true
+    includes:
+      after-body: giscus.html
 
 editor: visual
 
