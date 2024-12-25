@@ -14,7 +14,7 @@ format:
     highlight-style: tango
 comments:
   giscus: 
-    repo: "Sijan14/discussion"
+    repo: quarto-dev/quarto-web
 ---
 
 When working with data, organizing, storing, and performing operations on it efficiently is key. This is where data structures come into play. In simple terms, a data structure is a way of organizing and managing data so that it can be accessed and modified efficiently.
