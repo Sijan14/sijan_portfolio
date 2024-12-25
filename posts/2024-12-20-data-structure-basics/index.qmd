@@ -12,9 +12,6 @@ format:
     markdown: true
     allow-raw-html: true
     highlight-style: tango
-comments:
-  utterances: 
-    repo: Sijan14/sijan_portfolio
 ---
 
 When working with data, organizing, storing, and performing operations on it efficiently is key. This is where data structures come into play. In simple terms, a data structure is a way of organizing and managing data so that it can be accessed and modified efficiently.
@@ -193,6 +190,7 @@ If you found this post helpful or have any feedback, I’d love to hear your tho
 ### Reference
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
+```{=html}
 <script src="https://utteranc.es/client.js"
         repo="https://github.com/Sijan14/sijan_portfolio"
         issue-term="pathname"
@@ -201,3 +199,4 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
         crossorigin="anonymous"
         async>
 </script>
+```
