@@ -23,7 +23,6 @@ website:
 format:
   html:
     theme: Lux
-    css: styles.css
     toc: true
     page-layout: full
     embed-resources: true
