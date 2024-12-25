@@ -14,3 +14,15 @@ author:
     orcid: 0009-0002-2400-2804
     affiliation: Doctorate of Industrial-Organizational Psychology (Data Science) @ Montclair State University
     
+comments:
+  giscus:
+    repo: "Sijan14/sijan_portfolio"
+    repo-id: "R_kgDONe8mDA"
+    mapping: "pathname"
+    category: "Announcements"
+    category-id: "DIC_kwDONe8mDM4Clf-0"
+    reactions-enabled: true
+    input-position: "bottom"
+    theme: "noborder_light"
+    loading: "lazy"
+    
