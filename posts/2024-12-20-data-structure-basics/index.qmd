@@ -193,6 +193,7 @@ If you found this post helpful or have any feedback, I’d love to hear your tho
 ### Reference
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
+```{html}
 <script src="https://giscus.app/client.js"
         data-repo="Sijan14/discussion"
         data-repo-id="R_kgDONh_IVQ"
@@ -208,3 +209,4 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
         crossorigin="anonymous"
         async>
 </script>
+```
