@@ -9,7 +9,7 @@ format:
 <div style="margin: 20px 0;">
   <iframe 
     scrolling="no" 
-    src="https://github.com/Sijan14/sijan_portfolio/blob/main/plotly_graph.html" 
+    src="plotly_graph.html" 
     style="border: 0; width: 75%; height: 500px;">
   </iframe>
 </div>
