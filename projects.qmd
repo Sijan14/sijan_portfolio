@@ -55,10 +55,10 @@ fig <- plot_ly(
     updatemenus = list(
       list(
         buttons = list(
-          list(method = "restyle", args = list("visible", c(TRUE, FALSE, FALSE, FALSE, FALSE)), label = "LOGIT"),
-          list(method = "restyle", args = list("visible", c(FALSE, TRUE, FALSE, FALSE, FALSE)), label = "KNN"),
-          list(method = "restyle", args = list("visible", c(FALSE, FALSE, TRUE, FALSE, FALSE)), label = "KNN (added features)"),
-          list(method = "restyle", args = list("visible", c(FALSE, FALSE, FALSE, TRUE, FALSE)), label = "KNN (repeated CV)"),
+          list(method = "restyle", args = list("visible", c(TRUE, FALSE, FALSE, FALSE, FALSE)), label = "KNN"),
+          list(method = "restyle", args = list("visible", c(FALSE, TRUE, FALSE, FALSE, FALSE)), label = "KNN (added features)"),
+          list(method = "restyle", args = list("visible", c(FALSE, FALSE, TRUE, FALSE, FALSE)), label = "KNN (repeated CV)"),
+          list(method = "restyle", args = list("visible", c(FALSE, FALSE, FALSE, TRUE, FALSE)), label = "LOGIT"),
           list(method = "restyle", args = list("visible", c(FALSE, FALSE, FALSE, FALSE, TRUE)), label = "Random Forest"),
           list(method = "restyle", args = list("visible", c(TRUE, TRUE, TRUE, TRUE, TRUE)), label = "All Algorithms")
         ),
