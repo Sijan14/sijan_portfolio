@@ -11,7 +11,7 @@ format:
   html:
     comments: 
       utterances:
-        repo: Sijan14/sijan_porfolio
+        repo: quarto-dev/quarto-docs
     markdown: true
     allow-raw-html: true
     highlight-style: tango
@@ -194,10 +194,10 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
 
 <div style="margin: 20px 0;">
   <script src="https://utteranc.es/client.js"
-        repo="https://github.com/Sijan14/sijan-website.git"
+        repo="https://github.com/Sijan14/sijan_portfolio"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
         async>
-  </script>
+</script>
 </div>
