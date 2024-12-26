@@ -13,4 +13,9 @@ author:
     url: https://sijan14.github.io/sijan_portfolio
     orcid: 0009-0002-2400-2804
     affiliation: Doctorate of Industrial-Organizational Psychology (Data Science) @ Montclair State University
-    
+
+format:
+  html:
+    comments:
+      giscus:
+        repo: "Sijan14/sijan_portfolio"
