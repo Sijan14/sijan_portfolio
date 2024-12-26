@@ -12,6 +12,7 @@ format:
     comments:
       utterances:
          repo: Sijan14/sijan_portfolio
+         issue-term: pathname
     highlight-style: tango
 ---
 
@@ -197,4 +198,6 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
         crossorigin="anonymous"
         async>
 </script>
+
+
 
