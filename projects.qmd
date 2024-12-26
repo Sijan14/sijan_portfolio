@@ -7,7 +7,7 @@ format:
 ---
 
 ## Which ML Algorithms Predict Job Satisfaction The Best?
-<iframe scrolling="no" src="https://sijan14.github.io/sijan_portfolio/plotly_graph.html" style="border: 0; width: 75%; height: 500px;">
+<iframe scrolling="no" src="https://github.com/Sijan14/sijan_portfolio/plotly_graph.html" style="border: 0; width: 75%; height: 500px;">
 </iframe>
 
 
