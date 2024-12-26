@@ -192,13 +192,10 @@ If you found this post helpful or have any feedback, I’d love to hear your tho
 
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
-```{=html}
 <script src="https://utteranc.es/client.js"
         repo="https://github.com/Sijan14/sijan_portfolio"
         issue-term="pathname"
-        label="discussion"
         theme="github-light"
         crossorigin="anonymous"
         async>
 </script>
-```
