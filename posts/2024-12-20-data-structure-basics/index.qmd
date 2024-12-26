@@ -7,13 +7,6 @@ citation:
   url: https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/ 
 image: ds_ai.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
-format:
-  html:
-    comments:
-      utterances: 
-        repo: Sijan14/sijan_portfolio
-        issue-term: pathname
-    highlight-style: tango
 ---
 
 When working with data, organizing, storing, and performing operations on it efficiently is key. This is where data structures come into play. In simple terms, a data structure is a way of organizing and managing data so that it can be accessed and modified efficiently.
@@ -191,7 +184,6 @@ If you found this post helpful or have any feedback, I’d love to hear your tho
 
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
-```{=html}
 <div id="comment-section">
   <script src="https://utteranc.es/client.js"
           repo="Sijan14/sijan_portfolio"
@@ -201,6 +193,5 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
           async>
   </script>
 </div>
-```
 
 

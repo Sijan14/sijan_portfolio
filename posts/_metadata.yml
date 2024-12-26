@@ -16,6 +16,5 @@ author:
 
 format:
   html:
-    comments:
-      giscus:
-        repo: "Sijan14/sijan_portfolio"
+    embed-resources: true
+    highlight-style: tango
