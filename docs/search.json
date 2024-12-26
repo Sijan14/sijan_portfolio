@@ -60,7 +60,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Which ML Algorithms Predict Job Satisfaction The Best?"
+    "text": "Which ML Algorithms Predict Job Satisfaction The Best?\nDate: May 2, 2023\nMachine learning algorithms have gained significant popularity in I/O psychology due to their advanced learning capabilities, often outperforming traditional regression methods in predictive tasks. However, their “black-box” nature remains a challenge for research justification. This project compares the performance of baseline model logistic regression with popular algorithms KNN, and random forest in a 4-class job satisfaction classification task using the IBM HR dataset from Kaggle, comprising approximately 23,000 observations. Using lasso-based feature-selection methods, hyperparameter tuning, the project optimizes model performance and identifies the algorithm with the highest predictive accuracy. The findings offer actionable insights into employee well-being, showcasing the potential of data-driven approaches to enhance workforce engagement and organizational performance."
   },
   {
     "objectID": "projects.html#which-ml-algorithms-predict-job-satisfaction-the-best",
