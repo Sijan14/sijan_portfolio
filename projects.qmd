@@ -10,7 +10,13 @@ format:
 <div style="margin: 20px 0;">
   <iframe 
     scrolling="no" 
-    src="plotly_graph.html" 
+    src="<div style="margin: 20px 0;">
+  <iframe 
+    scrolling="no" 
+    src="https://Sijan14.github.io/sijan_portfolio/plotly_graph.html"
+    style="border: 0; width: 75%; height: 500px;">
+  </iframe>
+</div>" 
     style="border: 0; width: 75%; height: 500px;">
   </iframe>
 </div>
