@@ -9,6 +9,10 @@ image: ds_ai.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 format:
   html:
+    comments:
+      utterances: 
+        repo: Sijan14/sijan_portfolio
+        issue-term: pathname
     highlight-style: tango
 ---
 
@@ -187,13 +191,15 @@ If you found this post helpful or have any feedback, I’d love to hear your tho
 
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
-<script src="https://utteranc.es/client.js"
-        repo="Sijan14/sijan_portfolio"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+<div id="comment-section">
+  <script src="https://utteranc.es/client.js"
+          repo="Sijan14/sijan_portfolio"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
 
 
 
