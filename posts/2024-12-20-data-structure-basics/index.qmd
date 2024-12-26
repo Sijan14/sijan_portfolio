@@ -9,10 +9,6 @@ image: ds_ai.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 format:
   html:
-    comments:
-      utterances:
-         repo: Sijan14/sijan_portfolio
-         issue-term: pathname
     highlight-style: tango
 ---
 

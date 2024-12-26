@@ -6,6 +6,11 @@ website:
   title: "Sijan"
   site-url: https://sijan14.github.io/sijan_portfolio/
   description: "Sijan's portfolio and blog"
+  comments:
+    utterances:
+      repo: Sijan14/sijan_portfolio
+      issue-term: pathname
+      theme: github-light
   page-footer: 
     center: "Copyright 2024, Md Allama Ikbal Sijan" 
   navbar:
