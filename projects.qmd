@@ -1,7 +1,17 @@
 ---
 title: "Projects"
-format: html
-server: shiny
+format:
+  html:
+    embed-resources: true
 ---
 
-## Coming soon
+## Which ML Algorithms Predict Job Satisfaction The Best?
+<div style="margin: 20px 0;">
+  <iframe 
+    scrolling="no" 
+    src="https://sijan14.github.io/sijan_portfolio/plotly_graph.html" 
+    style="border: 0; width: 75%; height: 500px;">
+  </iframe>
+</div>
+
+
