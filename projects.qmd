@@ -6,9 +6,64 @@ format:
     allow-raw-html: true
 ---
 
-## Which ML Algorithms Predict Job Satisfaction The Best?
-<iframe scrolling="no" src="https://github.com/Sijan14/sijan_portfolio/plotly_graph.html" style="border: 0; width: 75%; height: 500px;">
-</iframe>
+### Which ML Algorithms Predict Job Satisfaction The Best?
+```{r, echo=FALSE, warning=FALSE}
+suppressMessages(library(plotly))
+
+# Data for the algorithms
+data <- data.frame(
+  Algorithms = c("LOGIT", "KNN", "KNN (added features)", "KNN (repeated CV)", "Random Forest"),
+  Precision = c(0.269, 0.682, 0.938, 0.938, 0.992),
+  Sensitivity = c(0.231, 0.690, 0.941, 0.939, 0.994),
+  Specificity = c(0.764, 0.897, 0.980, 0.979, 0.998),
+  F1_Accuracy = c(0.206, 0.685, 0.939, 0.938, 0.993)
+)
+
+# Transform data for Plotly
+data_long <- data.frame(
+  Algorithms = rep(data$Algorithms, 4),
+  Metrics = rep(c("Precision", "Sensitivity", "Specificity", "F1 Accuracy"), each = 5),
+  Values = c(data$Precision, data$Sensitivity, data$Specificity, data$F1_Accuracy)
+)
+
+# Adjust the order of the metrics
+data_long$Metrics <- factor(data_long$Metrics, levels = c("Precision", "Sensitivity", "Specificity", "F1 Accuracy"))
+
+# Create a line plot with hover and dropdown functionality
+fig <- plot_ly(
+  data_long,
+  x = ~Metrics,
+  y = ~Values,
+  type = 'scatter',
+  mode = 'lines+markers',
+  color = ~Algorithms,
+  hoverinfo = 'text',
+  text = ~paste("Algorithm:", Algorithms, "<br>Metric:", Metrics, "<br>Value:", Values)
+) %>%
+  layout(
+    yaxis = list(title = "Value", range = c(0, 1)),
+    xaxis = list(title = "Metrics"),
+    updatemenus = list(
+      list(
+        buttons = list(
+          list(method = "restyle", args = list("visible", c(TRUE, FALSE, FALSE, FALSE, FALSE)), label = "LOGIT"),
+          list(method = "restyle", args = list("visible", c(FALSE, TRUE, FALSE, FALSE, FALSE)), label = "KNN"),
+          list(method = "restyle", args = list("visible", c(FALSE, FALSE, TRUE, FALSE, FALSE)), label = "KNN (added features)"),
+          list(method = "restyle", args = list("visible", c(FALSE, FALSE, FALSE, TRUE, FALSE)), label = "KNN (repeated CV)"),
+          list(method = "restyle", args = list("visible", c(FALSE, FALSE, FALSE, FALSE, TRUE)), label = "Random Forest"),
+          list(method = "restyle", args = list("visible", c(TRUE, TRUE, TRUE, TRUE, TRUE)), label = "All Algorithms")
+        ),
+        direction = "down",
+        showactive = TRUE,
+        x = 0.8,
+        y = 1.2
+      )
+    )
+  )
+
+fig
+```
+
 
 
 
