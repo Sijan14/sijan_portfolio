@@ -191,6 +191,7 @@ If you found this post helpful or have any feedback, I’d love to hear your tho
 
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
+```{=html}
 <div id="comment-section">
   <script src="https://utteranc.es/client.js"
           repo="Sijan14/sijan_portfolio"
@@ -200,6 +201,6 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
           async>
   </script>
 </div>
-
+```
 
 
