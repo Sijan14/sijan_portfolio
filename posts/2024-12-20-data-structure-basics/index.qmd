@@ -71,7 +71,7 @@ student_grades = [85, 90, 78, 92, 88]
 
 Now you can perform operations more efficiently:
 
-```python
+``` python
 # Access a specific grade: Retrieve the second student's grade
 second_grade = student_grades[1]  # Outputs 90
 
@@ -86,9 +86,7 @@ student_grades.append(95)
 
 # Remove a student: Remove the grade of a student who dropped out
 student_grades.pop(1)  # Removes the second student's grade
-
 ```
-
 
 #### With a Data Structure (Hash Table)
 
@@ -191,9 +189,10 @@ Data structures are fundamental tools for organizing and managing data efficient
 If you found this post helpful or have any feedback, I’d love to hear your thoughts—feel free to leave a comment below!
 
 ### Reference
+
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
-
+```{=html}
 <script src="https://utteranc.es/client.js"
         repo="https://github.com/Sijan14/sijan_portfolio"
         issue-term="pathname"
@@ -202,3 +201,4 @@ zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zyboo
         crossorigin="anonymous"
         async>
 </script>
+```
