@@ -11,7 +11,9 @@ format:
 
 **Date:** December 15, 2024
 
-This project examines the latent factor structure of delay discounting, the tendency to prioritize immediate rewards over delayed ones, which is linked to impulsive behaviors such as substance abuse and poor academic performance. Previous studies have used various methods to measure delay discounting, but the findings have been inconsistent, partly due to differences in operationalization. This study uses confirmatory factor analysis (CFA) to explore the underlying latent factors of delay discounting and their relationship to behavioral outcomes, providing a clearer understanding of the construct and its implications.
+This project examines the latent factor structure of delay discounting, the tendency to prioritize immediate rewards over delayed ones, which is linked to behavioral outcomes such as substance abuse gambling, credit card debt, and poor academic performance (Wölfling et al., 2020). Previous studies have used various methods to measure delay discounting, but the findings have been inconsistent, partly due to differences in operationalization. This study uses confirmatory factor analysis (CFA) to explore the underlying latent factors of delay discounting and their relationship to behavioral outcomes, providing a clearer understanding of the construct and its implications.
+
+<br>
 
 ::: {layout-ncol=3}
 <div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
@@ -45,12 +47,13 @@ This project examines the latent factor structure of delay discounting, the tend
 <style>
   /* CSS for zoom effect on hover */
   .zoom-image {
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Added border transition */
   }
 
   .zoom-image:hover {
-    transform: scale(1.4);  /* Adjust the scale factor for zoom level */
+    transform: scale(1.1);  /* Adjust the scale factor for zoom level */
     z-index: 10;
+    border: 1px solid black;  /* Add black border on hover */
   }
 </style>
 
