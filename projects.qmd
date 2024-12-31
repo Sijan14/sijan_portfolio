@@ -7,13 +7,53 @@ format:
     toc: false
 ---
 
+### Delay Discounting as a Latent Factor
+
+**Date:** December 15, 2024
+
+::: {layout-ncol=3}
+<div style="text-align:center; border: 1px solid gray; padding: 10px; border-radius: 8px;">
+  <a href="cfa_project/of_model.png" target="_blank">
+    <img src="cfa_project/of_model.png" alt="One Factor Model" style="cursor: pointer; max-width: 100%; height: auto;">
+  </a>
+  <p><strong>One Factor Model:</strong></p>
+  <p>CFI = <span style="color: red;">.72</span></p>
+  <p>RMSEA = <span style="color: red;">.24</span></p>
+  <p>SRMR = <span style="color: red;">.109</span></p>
+  <p>Avg R<sup>2</sup> = <span style="color: green;">.60</span></p>
+</div>
+
+<div style="text-align:center; border: 1px solid gray; padding: 10px; border-radius: 8px;">
+  <a href="cfa_project/tf_model.png" target="_blank">
+    <img src="cfa_project/tf_model.png" alt="Two Factor Model" style="cursor: pointer; max-width: 100%; height: auto;">
+  </a>
+  <p><strong>Two Factor Model:</strong></p>
+  <p>CFI = <span style="color: green;">.94</span></p>
+  <p>RMSEA = <span style="color: red;">.12</span></p>
+  <p>SRMR = <span style="color: green;">.04</span></p>
+  <p>Avg R<sup>2</sup> = <span style="color: green;">.69</span></p>
+</div>
+
+<div style="text-align:center; border: 1px solid gray; padding: 10px; border-radius: 8px;">
+  <a href="cfa_project/ff_model.png" target="_blank">
+    <img src="cfa_project/ff_model.png" alt="Four Factor Model" style="cursor: pointer; max-width: 100%; height: auto;">
+  </a>
+  <p><strong>Four Factor Model:</strong></p>
+  <p>CFI = <span style="color: green;">.96</span></p>
+  <p>RMSEA = <span style="color: green;">.10</span></p>
+  <p>SRMR = <span style="color: green;">.04</span></p>
+  <p>Avg R<sup>2</sup> = <span style="color: green;">.69</span></p>
+</div>
+:::
+
+
 ### Which ML Algorithms Predict Job Satisfaction The Best?
 
 **Date:** May 2, 2023
 
 Machine learning algorithms have gained significant popularity in I/O psychology due to their advanced learning capabilities, often outperforming traditional regression methods in predictive tasks. However, their "black-box" nature remains a challenge for research justification. This project compares the performance of baseline model logistic regression with popular algorithms KNN, and random forest in a 4-class job satisfaction classification task using the IBM HR dataset from Kaggle, comprising approximately 23,000 observations. Using lasso-based feature-selection methods, hyperparameter tuning, the project optimizes model performance and identifies the algorithm with the highest predictive accuracy. The findings offer actionable insights into employee well-being, showcasing the potential of data-driven approaches to enhance workforce engagement and organizational performance.
 
-<div style="display: flex; justify-content: center;">
+::: {style="display: flex; justify-content: center;"}
 ```{r, echo=FALSE, warning=FALSE}
 suppressMessages(library(plotly))
 
@@ -72,12 +112,4 @@ fig <- plot_ly(
 
 fig
 ```
-</div>
-
-
-
-
-
-
-
-
+:::
