@@ -11,34 +11,30 @@ format:
 
 **Date:** December 15, 2024
 
+This project examines the latent factor structure of delay discounting, the tendency to prioritize immediate rewards over delayed ones, which is linked to impulsive behaviors such as substance abuse and poor academic performance. Previous studies have used various methods to measure delay discounting, but the findings have been inconsistent, partly due to differences in operationalization. This study uses confirmatory factor analysis (CFA) to explore the underlying latent factors of delay discounting and their relationship to behavioral outcomes, providing a clearer understanding of the construct and its implications.
+
 ::: {layout-ncol=3}
-<div style="text-align:center; border: 1px solid gray; padding: 10px; border-radius: 8px;">
-  <a href="cfa_project/of_model.png" target="_blank">
-    <img src="cfa_project/of_model.png" alt="One Factor Model" style="cursor: pointer; max-width: 100%; height: auto;">
-  </a>
-  <p><strong>One Factor Model:</strong></p>
+<div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
+  <img src="project_cfa/one_model.png" alt="One Factor Model" class="zoom-image" style="cursor: pointer; max-width: 100%; height: auto;">
+  <p style="font-weight: bold;">One Factor Model:</p>
   <p>CFI = <span style="color: red;">.72</span></p>
   <p>RMSEA = <span style="color: red;">.24</span></p>
   <p>SRMR = <span style="color: red;">.109</span></p>
   <p>Avg R<sup>2</sup> = <span style="color: green;">.60</span></p>
 </div>
 
-<div style="text-align:center; border: 1px solid gray; padding: 10px; border-radius: 8px;">
-  <a href="cfa_project/tf_model.png" target="_blank">
-    <img src="cfa_project/tf_model.png" alt="Two Factor Model" style="cursor: pointer; max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Two Factor Model:</strong></p>
+<div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
+  <img src="project_cfa/two_model.png" alt="One Factor Model" class="zoom-image" style="cursor: pointer; max-width: 100%; height: auto;">
+  <p style="font-weight: bold;">Two Factor Model:</p>
   <p>CFI = <span style="color: green;">.94</span></p>
   <p>RMSEA = <span style="color: red;">.12</span></p>
   <p>SRMR = <span style="color: green;">.04</span></p>
   <p>Avg R<sup>2</sup> = <span style="color: green;">.69</span></p>
 </div>
 
-<div style="text-align:center; border: 1px solid gray; padding: 10px; border-radius: 8px;">
-  <a href="cfa_project/ff_model.png" target="_blank">
-    <img src="cfa_project/ff_model.png" alt="Four Factor Model" style="cursor: pointer; max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Four Factor Model:</strong></p>
+<div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
+  <img src="project_cfa/four_model.png" alt="One Factor Model" class="zoom-image" style="cursor: pointer; max-width: 100%; height: auto;">
+  <p style="font-weight: bold;">Four Factor Model:</p>
   <p>CFI = <span style="color: green;">.96</span></p>
   <p>RMSEA = <span style="color: green;">.10</span></p>
   <p>SRMR = <span style="color: green;">.04</span></p>
@@ -46,6 +42,19 @@ format:
 </div>
 :::
 
+<style>
+  /* CSS for zoom effect on hover */
+  .zoom-image {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .zoom-image:hover {
+    transform: scale(1.4);  /* Adjust the scale factor for zoom level */
+    z-index: 10;
+  }
+</style>
+
+<br>
 
 ### Which ML Algorithms Predict Job Satisfaction The Best?
 
