@@ -9,7 +9,7 @@ format:
 
 ### Delay Discounting as a Latent Factor
 
-**Date:** December 15, 2024
+<p><span style="font-weight: bold;">Date:</span> December 15, 2024</p>
 
 This project examines the latent factor structure of delay discounting, the tendency to prioritize immediate rewards over delayed ones, which is linked to behavioral outcomes such as substance abuse gambling, credit card debt, and poor academic performance (Wölfling et al., 2020). Previous studies have used various methods to measure delay discounting, but the findings have been inconsistent, partly due to differences in operationalization. This study uses confirmatory factor analysis (CFA) to explore the underlying latent factors of delay discounting and their relationship to behavioral outcomes, providing a clearer understanding of the construct and its implications.
 
@@ -59,9 +59,11 @@ This project examines the latent factor structure of delay discounting, the tend
 
 <br>
 
+------------------------------------------------------------------------
+
 ### Which ML Algorithms Predict Job Satisfaction The Best?
 
-**Date:** May 2, 2023
+<p><span style="font-weight: bold;">Date:</span> May 2, 2023</p>
 
 Machine learning algorithms have gained significant popularity in I/O psychology due to their advanced learning capabilities, often outperforming traditional regression methods in predictive tasks. However, their "black-box" nature remains a challenge for research justification. This project compares the performance of baseline model logistic regression with popular algorithms KNN, and random forest in a 4-class job satisfaction classification task using the IBM HR dataset from Kaggle, comprising approximately 23,000 observations. Using lasso-based feature-selection methods, hyperparameter tuning, the project optimizes model performance and identifies the algorithm with the highest predictive accuracy. The findings offer actionable insights into employee well-being, showcasing the potential of data-driven approaches to enhance workforce engagement and organizational performance.
 
@@ -124,4 +126,42 @@ fig <- plot_ly(
 
 fig
 ```
+:::
+
+<br>
+
+------------------------------------------------------------------------
+
+### A Psychometric Scale for Conscientiousness: Development and Validation
+
+<p><span style="font-weight: bold;">Date:</span> April 21, 2023</p>
+
+This project involved the psychometric development of a new Conscientiousness scale, one of the Big Five personality traits. Following best-practice item-writing guidelines, I conducted a pilot study and refined the item pool by removing items with low item-total correlations and minimal impact on Cronbach's alpha if removed (see Figure 1 & 2). Subsequent analyses demonstrated strong internal consistency (α = .91) and validity evidence. The new scale exhibited high convergent validity (r = .85) with the well-validated IPIP Conscientiousness scale and good discriminant validity with other Big Five dimensions (see Figure 3). Criterion validity was supported by a positive correlation with job performance (r = .33), consistent with meta-analytic findings (Sackett et al., 2022), establishing the scale as a valid measure of conscientiousness.
+
+<br>
+
+::: {layout-ncol=3}
+<div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
+  <img src="scale_dev/item_total_correlation.png" alt="One Factor Model" class="zoom-image" style="cursor: pointer; max-width: 100%; height: auto;">
+  
+  <br>
+  
+  <p style="font-weight: bold;">Figure 1</p>
+</div>
+
+<div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
+  <img src="scale_dev/item_dropped.png" alt="One Factor Model" class="zoom-image" style="cursor: pointer; max-width: 100%; height: auto;">
+  
+  <br>
+  
+  <p style="font-weight: bold;">Figure 2</p>
+</div>
+
+<div style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;">
+  <img src="scale_dev/construct_validity.png" alt="One Factor Model" class="zoom-image" style="cursor: pointer; max-width: 100%; height: auto;">
+  
+  <br>
+  
+  <p style="font-weight: bold;">Figure 3</p>
+</div>
 :::

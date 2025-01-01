@@ -1,0 +1,426 @@
+---
+title: "R You Ready? An I/O Psychologist's Guide to R & Rstudio"
+description: " My January 16, 2024 METRO workshop is now a blog post, covering the essential 20% of R syntax for 80% of data analysis tasks. This blog post is designed for both R beginners and those seeking a refresher."
+date: 1-15-2024
+categories: [R, Workshop]
+citation: 
+  url: https://sijan14.github.io/sijan_portfolio/posts/2024-12-31-R-Workshop/ 
+image: computer.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+## Introduction
+
+In recent years, the R programming language emerged as the industry standard in social science research, owing to its robust statistical analysis tools, powerful data visualization capabilities, and a rich ecosystem of packages. Its open-source nature and emphasis on reproducibility further propelled its widespread adoption. This workshop, titled “R You Ready? An I/O Psychologist’s Guide to R and RStudio," was tailored for both R novices and those seeking a refresher, focusing on the essential 20% of R syntax that facilitated 80% of data analysis tasks. Participants were introduced to the RStudio environment and fundamental R syntax, followed by hands-on sessions covering data transformation (dplyr), data visualization (ggplot2), statistical analyses (lm, stats), APA-style reporting (markdown, apa, papaja), and text mining (stringr, tidytext). The workshop concluded with collaborative problem-solving sessions to reinforce the concepts learned. The aim was to introduce students and practitioners to the power of R to carry out basic and advanced analyses, along with the capability to visualize and report findings.
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/3awJKhGM3H8Dbw?hostedIn=slideshare&page=upload" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+
+## Tutorial #1 (Cleaning)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,       # Show code in output
+  warning = FALSE,   # Suppress warnings
+  message = FALSE    # Suppress messages
+)
+```
+### Getting Started
+
+Before diving into the transformations, let’s load the necessary package and dataset:
+
+```{r}
+# Uncomment the next four lines if you haven't installed the package
+# install.packages("tidyverse")
+# install.packages("psych")
+# install.packages("lsr")
+# install.packages("apaTables")
+library(tidyverse)
+library(psych)
+library(lsr)
+library(apaTables)
+
+# Loading the dataset
+df <- read_csv("IBM HR Data.csv")
+
+# Checking all the column names
+names(df)
+```
+
+<br>
+
+### Sorting Data
+Sorting is often one of the first transformations you’ll perform. Here’s how to do it in base R and tidyverse.
+
+##### Option 1: Base R
+In base R, you can use the `order()` function to sort by one or more columns:
+```{r}
+# Sort by age in ascending order
+index <- order(df$Age) 
+df <- df[index, ]
+```
+
+##### Option 2: Tidyverse
+The `arrange()` function from dplyr is a more concise and readable option:
+```{r}
+# Sort by multiple columns: Age (descending) and DailyRate (ascending)
+df <- arrange(df, desc(Age), DailyRate)
+```
+
+<br>
+
+### Renaming Columns
+Renaming columns is another frequent task, especially when preparing data for analysis or visualization.
+
+##### Option 1: Base R
+Use the `colnames()` function to rename specific columns:
+```{r}
+# Rename the first column (age)
+colnames(df)[1] <- "how_old"
+```
+
+##### Option 2: Tidyverse
+The `rename()` function provides an intuitive way to rename columns:
+```{r}
+# Rename "how_old" back to "age"
+df <- rename(df, "age" = "how_old")
+```
+
+<br>
+
+### Filtering Data
+Filtering rows based on specific conditions is crucial for focusing your analysis. Let’s filter for single employees earning over $10,000 per month:
+
+```{r}
+# Filter rows where MaritalStatus is "Single" and MonthlyIncome > 10000
+single_rich <- df %>%
+  filter(MaritalStatus == "Single", MonthlyIncome > 10000)
+```
+The pipe operator (`%>%`) from the tidyverse makes it easy to chain multiple operations.
+
+<br>
+
+### Summarizing Data
+Summarization provides insights into key metrics like mean and standard deviation. Here’s how to summarize the filtered data:
+
+```{r}
+# summarizing the subset data
+single_rich %>%
+  summarise(Mean = mean(MonthlyIncome), SD = sd(MonthlyIncome))
+```
+This calculates the average (Mean) and standard deviation (SD) of the MonthlyIncome column for the filtered subset.
+
+<br>
+
+### Subsetting Columns
+
+Selecting specific columns is often necessary to focus on relevant data or remove unnecessary variables. You can use the `select()` function from the **tidyverse** to keep only the desired columns:
+
+```{r}
+# Keep specific columns
+df %>%
+  select(Attrition, DailyRate, Department, Education)
+```
+This selects only the *Attrition*, *DailyRate*, *Department*, and *Education* columns.
+
+To drop specific columns, use the `select()` function with the negation operator `!`:
+
+```{r}
+# Drop unnecessary columns
+df <- df %>%
+  select(!c(EmployeeCount, StandardHours, Over18))
+```
+This removes the *EmployeeCount*, *StandardHours*, and *Over18* columns.
+
+### Grouping Data by Variable
+
+Grouping rows is helpful for summarizing data by categories. Here, we’ll group the data by EducationField and count the number of occurrences in each category.
+
+```{r}
+# Group by EducationField and count rows
+df %>%
+  group_by(EducationField) %>%
+  count() %>%
+  arrange(desc(n))
+```
+
+This code:
+
+1. Groups the data by *EducationField*.
+2. Counts the rows in each group.
+3. Arranges the groups in descending order by count (n).
+
+### Recoding Variables
+Recoding variables is a common task when transforming categorical data into numerical or more meaningful labels. First, let’s check the frequency of each category in the *Attrition* column:
+
+```{r}
+# View the distribution of Attrition
+table(df$Attrition)
+```
+
+You can use the `recode()` function from the tidyverse to assign new values to the categories:
+```{r}
+# Recode Attrition variable
+df$Attrition <- recode(df$Attrition,
+                       "Current employee" = 0,
+                       "Termination" = 1,
+                       "Voluntary Resignation" = 2)
+```
+
+This transforms Attrition into a numerical variable with the following mapping:
+
+- 0: Current employee
+- 1: Termination
+- 2: Voluntary Resignation
+
+------------------------------------------------------------------------
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/nSRTwoF2Ojnsqy?hostedIn=slideshare&page=upload" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+
+## Tutorial #2 (Visuals)
+We will use **ggplot2** to create visually appealing scatterplots, apply faceting for multi-panel plots, and customize plots for better presentation. These techniques are essential for exploratory data analysis and communicating insights effectively.
+
+
+### Scatterplots in ggplot2
+
+Scatterplots are a powerful way to visualize relationships between two continuous variables.
+
+Here’s how to create a simple scatterplot of *YearsAtCompany* vs. *TotalWorkingYears* with points colored red:
+
+```{r}
+# Basic scatterplot
+ggplot(data = df) +
+  geom_point(aes(x = YearsAtCompany, y = TotalWorkingYears), color = "Red")
+```
+This code plots *YearsAtCompany* on the x-axis and *TotalWorkingYears* on the y-axis with red points.
+
+##### Adding Aesthetic Mappings
+To add another dimension, such as coloring points by *MaritalStatus*, use the `aes()` function:
+```{r}
+# Scatterplot with points colored by MaritalStatus
+ggplot(data = df) +
+  geom_point(aes(x = YearsAtCompany, y = TotalWorkingYears, color = MaritalStatus))
+```
+
+<br>
+
+### Faceting for Multi-Panel Plots
+Faceting allows you to split the data into panels based on a categorical variable.
+```{r}
+# Faceted scatterplot by JobLevel
+ggplot(data = df) +
+  geom_point(aes(x = YearsAtCompany, y = YearsInCurrentRole)) +
+  facet_wrap(~JobLevel, nrow = 2)
+```
+This creates separate scatterplots for each level of JobLevel, arranged in two rows.
+
+<br>
+
+### More Cusomization
+For this section, we’ll use the built-in mpg dataset. To enhance a scatterplot, you can map multiple aesthetics (e.g., color and size), customize axis labels, and add a title:
+```{r}
+# Load the dataset
+data(mpg)
+
+# Scatterplot with multiple aesthetics and customizations
+ggplot(mpg, aes(x = displ, y = hwy, color = drv, size = cty)) +
+  geom_point(alpha = 0.7) + # Add points with transparency
+  # Customize axis labels and plot titles
+  labs(title = "Fuel Efficiency vs. Engine Displacement",
+       x = "Engine Displacement (L)",
+       y = "Highway MPG",
+       color = "Drive Type",
+       size = "City MPG") +
+  # Apply a theme
+  theme_bw() +
+  facet_wrap(~class)
+```
+Here’s what this code does:
+
+- Aesthetics: Maps drv (drive type) to color and cty (city MPG) to point size.
+- Labels: Adds a title, and custom axis labels, and modifies the legend titles.
+- Theme: Applies a clean, white background theme (theme_bw()).
+- Faceting: Creates facets for each vehicle class.
+
+---
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/17ol0GSM7Zvho1?hostedIn=slideshare&page=upload" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+
+## Tutorial #3 (Analysis)
+### Summary and Frequency Tables
+
+Use `summary()` and `table()` to calculate basic descriptive statistics and frequency counts.
+
+```{r}
+# Descriptive statistics for numeric variables
+summary(df$WorkLifeBalance)
+
+# Frequency table for categorical variables
+table(df$Gender)
+```
+
+Using the `describe` function from the **psych** Package for Detailed Summaries of numeric variables
+```{r}
+# Descriptive statistics for MonthlyIncome
+describe(df$MonthlyIncome)
+```
+
+<br>
+
+### t-tests
+A t-test is used to compare the means of two groups. Here, we examine differences in *JobSatisfaction* between genders.
+
+```{r}
+# Filtering Gender
+df <- df %>%
+  filter(Gender %in% c("Female", "Male"))
+
+# Perform t-test
+t.test(df$JobSatisfaction ~ df$Gender, var.equal = TRUE)
+```
+
+<br>
+
+##### Effect Size
+Effect size provides a measure of the magnitude of differences. We calculate Cohen's D using the **lsr** package.
+
+```{r}
+# Cohen's D for JobSatisfaction by Gender
+cohensD(df$JobSatisfaction ~ df$Gender)
+```
+
+<br>
+
+### One-Way ANOVA
+ANOVA (Analysis of Variance) is used to compare the means of more than two groups. We analyze *JobSatisfaction* across *Department*.
+
+```{r}
+# Convert Department to factor
+class(df$Department) # Check class
+df$Department <- as.factor(df$Department) # Convert to factor
+
+# Conduct ANOVA
+anovaTest <- aov(df$JobSatisfaction ~ df$Department)
+summary(anovaTest)
+```
+
+##### Effect Size
+after conducting the ANOVA, we apply Tukey's HSD to compare the *JobSatisfaction* between different levels of *Department*.
+
+```{r}
+# Post-hoc Tukey's HSD test
+TukeyHSD(anovaTest)
+```
+
+<br>
+
+### Correlation Analysis
+The correlation between two continuous variables can be calculated using the `cor()` or `cor.test` function. Here, we calculate the correlation between *JobInvolvement* and *RelationshipSatisfaction.*
+
+```{r}
+# Calculate correlation, using complete observations only
+cor.test(df$JobInvolvement, df$RelationshipSatisfaction, use = "complete.obs")
+```
+
+<br>
+
+### Multiple Linear Regression
+A multiple linear regression model can be used to predict the value of a continuous dependent variable based on multiple independent variables. Here, we build a model predicting *JobSatisfaction*.
+
+```{r}
+# Multiple linear regression model
+model1 <- lm(JobSatisfaction ~ 
+              age + Gender + JobLevel + MonthlyIncome, 
+            data = df)
+
+# Display the summary of the model
+summary(model1)
+
+# Second model including EducationField as a factor variable
+model2 <- lm(JobSatisfaction ~ 
+               as.factor(EducationField) + 
+               age + Gender + JobLevel + 
+               MonthlyIncome, 
+             data = df)
+
+# Display the summary of the model
+summary(model2)
+```
+
+<br>
+
+### Logistic Regression
+Logistic regression is used when the dependent variable is binary. We transform Gender into a binary variable and predict it based on *MonthlyIncome* and *JobLevel*.
+
+```{r}
+# Convert Gender to binary variable (Male = 1, Female = 0)
+df <- df %>%
+  mutate(Gender = ifelse(Gender == "Male", 1, 0))
+
+# Logistic regression model
+logit <- glm(Gender ~ MonthlyIncome + JobLevel, data = df, family = "binomial")
+
+# Display the summary of the logistic regression model
+summary(logit)
+
+# Exponentiate the coefficients to get odds ratios
+exp(coef(logit))
+```
+
+---
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/52iNYbcTEtKbEJ?hostedIn=slideshare&page=upload" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+
+## Tutorial #4 (Reports)
+
+We will use the `apaTables` package to format analysis outputs according to APA guidelines and export them to Word documents.
+
+### APA Style Correlation Table
+First, we create a correlation matrix using the `cor()` function for a subset of numeric columns from the dataset.
+
+```{r correlation-matrix}
+# Subset of numeric columns for correlation analysis
+num <- df[, c("age", "DailyRate", "DistanceFromHome", 
+              "HourlyRate", "MonthlyIncome")]
+
+# Calculate the Pearson correlation matrix
+corr_matrix <- cor(num, method = "pearson", use = "complete.obs")
+```
+
+Next, we use the `apa.cor.table()` function from the apaTables package to create a formatted APA-style table.
+```{r}
+# Create and save the APA correlation table
+apa.cor.table(corr_matrix, table.number = 1, filename = "Correlation_table.doc")
+```
+
+The above code will generate a Word document with the correlation table in APA format, and the file will be saved as "Correlation_table.doc".
+
+<br>
+
+### APA Style ANOVA Table
+We will use the `apa.aov.table()` function to format the ANOVA results into an APA-style table and save it to a Word document.
+
+```{r}
+# Create and save the APA ANOVA table
+apa.aov.table(anovaTest, table.number = 2, filename = "Anova_table.doc")
+```
+This will generate a Word document containing the APA-formatted ANOVA table, saved as "Anova_table.doc".
+
+---
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/zQOpFKOflI5hZ?hostedIn=slideshare&page=upload" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+
+## Conclusion
+In this blog post, we covered key techniques for data manipulation, analysis, and reporting in R. We started with basic operations such as sorting, filtering, and renaming columns using both base R and the dplyr package. We then explored advanced visualization with ggplot2, creating customized scatterplots and faceted plots. The analysis section demonstrated t-tests, ANOVA, regression models, and post-hoc tests to analyze relationships in the data.
+
+We also learned how to create APA-style tables for correlation matrices and ANOVA results using the apaTables package. While we’ve only scratched the surface of what we can do with R, these tutorials should provide a robust foundation for conducting data analysis in research, business, and academic contexts, while hopefully mitigating initial anxieties associated with learning to code. Happy coding!
+
+
+
+
