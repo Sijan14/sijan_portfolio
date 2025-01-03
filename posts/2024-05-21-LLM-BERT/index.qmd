@@ -1,0 +1,10 @@
+---
+title: "Leveraging Large Language Models for Natural Language Processing Tasks: Tokenization, Word Embeddings, and Model Training"
+description: "This blog post walks you through using the transformers library to import pre-trained large language models (LLM) and its tokenizer. You’ll learn how to tokenize text, extract word embeddings from different hidden layers, and use these embeddings in machine learning models for prediction and classification tasks."
+date: 5-21-2024
+categories: [LLM, NLP]
+citation: 
+  url: https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/ 
+#image: 
+draft: true # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---

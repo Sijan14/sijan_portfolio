@@ -1,6 +1,6 @@
 ---
 title: "R You Ready? An I/O Psychologist's Guide to R & Rstudio"
-description: " My January 16, 2024 METRO workshop is now a blog post, covering the essential 20% of R syntax for 80% of data analysis tasks. This blog post is designed for both R beginners and those seeking a refresher."
+description: "My January 16, 2024 METRO workshop is now a blog post, covering the essential 20% of R syntax for 80% of data analysis tasks. This blog post is designed for both R beginners and those seeking a refresher."
 date: 1-15-2024
 categories: [R, Workshop]
 citation: 
@@ -421,6 +421,8 @@ In this blog post, we covered key techniques for data manipulation, analysis, an
 
 We also learned how to create APA-style tables for correlation matrices and ANOVA results using the apaTables package. While we’ve only scratched the surface of what we can do with R, these tutorials should provide a robust foundation for conducting data analysis in research, business, and academic contexts, while hopefully mitigating initial anxieties associated with learning to code. Happy coding!
 
+## Reference
+Wickham, H., & Grolemund, G. (2017). *R for data science: Import, tidy, transform, visualize, and model data* (1st ed.). O'Reilly Media.
 
 
 
