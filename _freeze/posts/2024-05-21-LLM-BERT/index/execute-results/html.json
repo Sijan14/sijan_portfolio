@@ -1,0 +1,11 @@
+{
+  "hash": "bd1f67b71deb769a9b707b3ff5e869bc",
+  "result": {
+    "markdown": "---\ntitle: \"Leveraging LLMs for NLP: Tokenization, Embeddings, and Training\"\ndescription: \"This blog post walks you through using the transformers library to import pre-trained large language models (LLM) and its tokenizer. You’ll learn how to tokenize text, extract word embeddings from different hidden layers, and use these embeddings in machine learning models for prediction and classification tasks.\"\ndate: 5-21-2024\ncategories: [LLM, NLP]\ncitation: \n  url: https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/ \n#image: \ndraft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!\n---\n\n## Importing LLM & Tokenizer\n\nWe start by importing a pre-trained LLM (BERT~base~) and tokenizer using the AutoModel and BertTokenizer from the transformers library.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n# import the transformers module\nfrom transformers import AutoModel, BertTokenizer\n\nbert = AutoModel.from_pretrained('bert-base-uncased', output_hidden_states=True)\ntokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\n```\n:::\n\n\n``` {.python style=\"green;\"}\nimport the transformers modulefrom transformers import AutoModel, \n\nBertTokenizerbert = AutoModel.from_pretrained('bert-base-uncased', output_hidden_states=True)tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\n```\n\nIf you are interested in other You can easily switch to different pre-trained models available through the HuggingFace Transformers library. Some popular models include:\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

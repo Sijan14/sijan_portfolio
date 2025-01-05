@@ -1,10 +1,211 @@
 ---
-title: "Leveraging Large Language Models for Natural Language Processing Tasks: Tokenization, Word Embeddings, and Model Training"
-description: "This blog post walks you through using the transformers library to import pre-trained large language models (LLM) and its tokenizer. You’ll learn how to tokenize text, extract word embeddings from different hidden layers, and use these embeddings in machine learning models for prediction and classification tasks."
+title: "From Text to Predictions: Using LLMs for NLP Tasks"
+description: "This blog post walks you through using the transformers library to import pre-trained large language models (LLM) and its tokenizer. You’ll learn how to tokenize text, extract word embeddings from different hidden layers, and use these embeddings in machine learning models for prediction."
 date: 5-21-2024
 categories: [LLM, NLP]
 citation: 
   url: https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/ 
-#image: 
-draft: true # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+image: llm_deepmind.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+format:
+  html:
+    embed-resources: true
+    highlight-style: gruvbox-dark
+editor: visual
 ---
+
+## 📦 Importing LLM & Tokenizer
+
+We start by importing a pre-trained LLM (BERT~BASE~) and tokenizer using the `AutoModel` and `BertTokenizer` from the transformers library.
+
+``` python
+# Import the necesary modules
+import pandas as pd
+import numpy as np
+import torch
+import torch.nn as nn
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+from sklearn.linear_model import Ridge, RidgeCV
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import KFold, cross_val_predict, cross_val_score
+from scipy.stats import pearsonr
+from transformers import AutoModel, BertTokenizer
+
+# Import the LLM and tokenizer
+bert = AutoModel.from_pretrained('bert-base-uncased', output_hidden_states=True)
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+```
+
+For those interested in exploring other Large Language Models (LLMs), the Hugging Face Transformers library offers easy access to a variety of pre-trained models, including `google/flan-t5-large`, `Falcon3-10B-Base`, `albert-base-v2`, `roberta-base`, `distilbert-base-uncased`. It's crucial, however, to verify that the chosen LLM is capable of the specific natural language tasks you intend to perform (e.g., tokenization, classification, summarization). Check out the Hugging Face documentation for more details.
+
+## 🧠 Generating Text-embeddings From Texts
+
+Text embeddings are a fundamental NLP technique that transforms textual data into numerical vectors, making it digestible for processing by Machine Learning (ML) models (Ma et al., 2019). These embeddings and their large dimensions encapsulate the semantic, syntactic, and contextual properties of the text in a format that can be processed efficiently by computers.
+
+### Tokenization
+
+The first step to transform the texts into text-embeddings is tokenization. Tokenization, a fundamental preprocessing step in natural language processing (NLP), involves segmenting text into smaller units called tokens (Bird et al., 2009). Tokens are essentially segments of the text that are treated as distinct units for analysis, typically words or subwords. For example, word-level tokenization would split "Natural language processing is fascinating" into \["Natural", "language", "processing", "is", "fascinating"\]. Modern tokenization methods typically utilize subwords due to their increased utility.
+
+Before tokenization, establishing a consistent token size across all data points is beneficial. This standardization allows LLMs to process text and generate embeddings more efficiently. I prefer setting the token size to accommodate the longest responses to avoid data loss, with shorter responses padded to match. Alternatively, using the average token length is possible, but this approach risks truncating longer responses and losing data.
+
+``` python
+# Calculate the length of each text entry in tokens
+token_lengths = []  # List to store token counts
+for text in df['text_variable']: # change 'text_variable' to the variable in your dataset
+    token_lengths.append(len(text.split()))
+
+max_token = max(token_lengths)
+min_token = min(token_lengths)
+
+# Print the shortest and longest tokenized responses
+print("Shortest response (in tokens):", max_token)
+print("Longest response (in tokens):", max_token)
+```
+
+### Text-embeddings
+
+After tokenization, the resulting tokens are fed into a pre-trained model (e.g., BERT~BASE~) to generate text embeddings. These embeddings are high-dimensional vectors; for BERT~BASE~, the output is a (sample_size, 768) matrix, while for BERT~LARGE~, it's (sample_size, 1024). Several strategies exist for utilizing these outputs. Embeddings can be extracted from a single layer (out of 12 for BERT~BASE~ and 24 for BERT~LARGE~) or by concatenating or averaging embeddings from multiple layers. Extracting from the last layer, the second-to-last layer, and averaging or concatenating the last four layers has proven particularly effective for various NLP tasks (Devlin et al., 2018; Kjell et al., 2023). The code snippet below provides an example of a function that generates text embeddings by averaging the output of the last four hidden layers.
+
+``` python
+# Function for text-embeddings that encode the average of last four hidden layers
+def mean_of_last_four_layers(text):
+
+    # Tokenize text and convert to tensor
+    encoded_input = tokenizer(text, max_length=max_token, padding='max_length', truncation=True, return_tensors='pt')
+
+    # Forward pass, disable gradient calculation
+    with torch.no_grad():
+        outputs = bert(**encoded_input)
+        hidden_states = outputs.hidden_states
+
+    # Stack the last four layers and calculate the mean along the new dimension (0)
+    last_four_layers = torch.stack((hidden_states[-4], hidden_states[-3], hidden_states[-2], hidden_states[-1]))
+    mean_embeddings = torch.mean(last_four_layers, dim=0)
+
+    return mean_embeddings.squeeze().numpy()
+
+# Apply the function to the 'text_variable' column
+df['encoded'] = df['text_variable'].apply(lambda x: mean_of_last_four_layers(x))
+```
+
+As an alternative to averaging the last four hidden layers, you can extract the output from a specific layer. For instance, to use the second-to-last layer (layer 11 in BERT~BASE~), use the following code:
+
+``` python
+# Function for embeddings from a specific BERT layer
+def encode_text(text, layer_index):
+
+    # Tokenize text and convert to tensor
+    encoded_input = tokenizer(text, max_length = max_token, padding = 'max_length', truncation=True, return_tensors='pt')
+
+    # Forward pass, disable gradient calculation
+    with torch.no_grad():
+        outputs = bert(**encoded_input)
+        hidden_states = outputs.hidden_states
+
+    # Select the embeddings from the specified layer
+    return hidden_states[layer_index].squeeze().numpy()
+
+# 11th layer (second to last)
+# Change this to get embeddings from a different layer
+selected_layer = 11
+
+# Encode the column (this example directly updates the DataFrame)
+df['encoded_layer_11'] = df['text_variable'].apply(lambda x: encode_text(x, layer_index=selected_layer))
+```
+
+## 🤖 Fitting Text-embeddings into ML Models
+
+To use text embeddings in regression or machine learning models, you can perform mean pooling, reducing the three-dimensional token embeddings (sample_size, token_size, 768) to two-dimensional vectors (sample_size, 768). This process averages the embeddings across all tokens per document/data point, creating a single vector representing the overall semantic content of individual responses. While mean pooling might lose some contextual nuances, it balances detail with computational efficiency, effectively filtering noise and ensuring no single token overly influences the model (Biggiogera et al., 2021; Ma et al., 2019; Maini et al., 2020). You will then use these mean embeddings as input features for different ML models.
+
+``` python
+# Splitting the dataset into training and testing sets
+train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
+
+# Converting the 'encoded' column to a numpy array and averaging across tokens
+train_embeddings = np.array(train_df['encoded'].tolist())
+x_train = np.mean(train_embeddings, axis=1)
+
+test_embeddings = np.array(test_df['encoded'].tolist())
+x_test = np.mean(test_embeddings, axis=1)
+
+# Converting the target variable column to a numpy array
+y_train = np.array(train_df['target_variable'].tolist())
+y_test = np.array(test_df['target_variable'].tolist())
+
+# Initializing the regression model
+rf_regressor = RandomForestRegressor(random_state=42) # to use a different ML model change this line
+
+# Training the model
+rf_regressor.fit(x_train, y_train)
+
+# Making predictions on the test set
+test_predictions = rf_regressor.predict(x_test)
+
+# Evaluating the model
+mse = mean_squared_error(y_test, test_predictions)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_test, test_predictions)
+cor = np.corrcoef(y_test, test_predictions)
+
+# Displaying evaluation metrics
+print(f'Mean Squared Error (MSE): {mse:.4f}')
+print(f'Root Mean Squared Error (RMSE): {rmse:.4f}')
+print(f'R-squared (R²): {r2:.4f}')
+print(f'Correlation Coefficient: {cor[0, 1]:.4f}')
+```
+
+### K-fold Cross-validation
+
+``` python
+# Convert the 'encoded' column to a numpy array and average across tokens
+embeddings = np.array(df['encoded'].tolist())
+x_input = np.mean(embeddings, axis=1)
+
+# Convert the target variable column to a numpy array
+input_y = np.array(df['target_variable'].tolist())  # Replace 'target_variable' with the actual column name
+
+# Initialize the Random Forest regressor
+regressor = RandomForestRegressor(random_state=42)
+
+# K-Fold Cross-Validation setup
+kfold = KFold(n_splits=5, shuffle=True, random_state=42)
+
+# Cross-validation: Calculate Negative Mean Squared Error (converted to RMSE)
+mse_scores = cross_val_score(regressor, x_input, input_y, cv=kfold, scoring='neg_mean_squared_error')
+mean_rmse = np.mean(np.sqrt(-mse_scores))
+print(f'Mean Root Mean Squared Error (RMSE): {mean_rmse:.4f}')
+
+# Cross-validation: Calculate R-squared (R²) scores
+r2_scores = cross_val_score(regressor, x_input, input_y, cv=kfold, scoring='r2')
+mean_r2 = np.mean(r2_scores)
+print(f'Mean R-squared (R²): {mean_r2:.4f}')
+
+# Cross-validation: Generate predictions for each fold
+predictions = cross_val_predict(regressor, x_input, input_y, cv=kfold)
+
+# Calculate the Pearson correlation coefficient
+correlation, _ = pearsonr(input_y, predictions)
+print(f'Correlation Coefficient: {correlation:.4f}')
+```
+
+## 💭 Conclusion
+
+In this blog post, I demonstrated how to leverage pre-trained LLMs like BERT for NLP tasks, covering text tokenization, embedding extraction, and their application in predictive ML models. We explored techniques such as averaging or selecting embeddings from specific hidden layers to balance computational efficiency and contextual richness. We also showed how to integrate these embeddings into ML pipelines, including training, prediction and evaluation using RMSE, R², and k-fold cross-validation. Using LLM-based embeddings for feature engineering allows models to capture nuanced textual relationships, empowering solutions for text classification, sentiment analysis, and other NLP challenges.
+
+I hope this post provided a helpful starting point for using LLMs to analyze large amounts of unstructured text data for prediction. With further exploration, you'll be ready to tackle more advanced techniques, including using regression heads directly on LLMs, fine-tuning models for specific tasks, and utilizing LLMs pre-trained on specialized corpora.Feel free to connect and share your progress and research.
+
+## 🔗 References
+
+Biggiogera, J., Boateng, G., Hilpert, P., Vowels, M., Bodenmann, G., Neysari, M., ... & Kowatsch, T. (2021, October). BERT meets LIWC: Exploring state-of-the-art language models for predicting communication behavior in couples’ conflict interactions. In *Companion Publication of the 2021 International Conference on Multimodal Interaction* (pp. 385-389). https://doi.org/10.1145/3461615.3485423
+
+Bird, S., Klein, E., & Loper, E. (2009). *Natural language processing with Python: analyzing text with the natural language toolkit.* " O'Reilly Media, Inc.".
+
+Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. *arXiv preprint arXiv:1810.04805.* https://doi.org/10.48550/arXiv.1810.04805
+
+Kjell, O. N., Kjell, K., & Schwartz, H. A. (2023). Beyond rating scales: With targeted evaluation, language models are poised for psychological assessment. *Psychiatry Research, 115667.* https://doi.org/10.1016/j.psychres.2023.115667
+
+Ma, X., Wang, Z., Ng, P., Nallapati, R., & Xiang, B. (2019). Universal text representation from bert: An empirical study. *arXiv preprint arXiv:1910.07973.* https://doi.org/10.48550/arXiv.1910.07973
+
+Maini, P., Kolluru, K., & Pruthi, D. (2020). Why and when should you pool? Analyzing Pooling in Recurrent Architectures. *arXiv preprint arXiv:2005.00159.*

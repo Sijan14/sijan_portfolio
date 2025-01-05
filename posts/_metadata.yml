@@ -17,4 +17,4 @@ author:
 format:
   html:
     embed-resources: true
-    highlight-style: tango
+    highlight-style: gruvbox-dark

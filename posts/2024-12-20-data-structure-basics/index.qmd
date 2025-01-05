@@ -11,13 +11,13 @@ draft: false # setting this to `true` will prevent your post from appearing on y
 
 When working with data, organizing, storing, and performing operations on it efficiently is key. This is where data structures come into play. In simple terms, a data structure is a way of organizing and managing data so that it can be accessed and modified efficiently.
 
-### Data Type vs. Data Structure
+### 🔄 Data Type vs. Data Structure
 
 If you are reading this, you’re likely already familiar with data types such as `int` (integer), `float` (floating-point number), `str` (string), and `bool` (Boolean). These are the building blocks used to define the kind of data you're working with. When you perform data cleaning or analysis, you often manipulate these primitive data types.
 
 Data structures build on these basic data types to manage and organize data more effectively. Think of it like constructing a car: the raw materials like metal and plastic are akin to the primitive data types, while the car's components, such as the engine, trunk, doors, and wheels, represent the data structures. In essence, data structures use data types to create organized frameworks that allow for efficient storage and operations on your data.
 
-### Common Operations
+### ⚙️ Common Operations
 
 Data structures are essential tools in programming because they allow you to store, organize, and manage data efficiently. Common operations performed with data structures include:
 
@@ -29,17 +29,17 @@ Data structures are essential tools in programming because they allow you to sto
 
 While data types tell the computer what kind of data is being stored (e.g., integers, strings, floats), they do not inherently provide a way to store multiple values together or perform advanced operations. For managing multiple similar data points, data structures become invaluable.
 
-### Why Use Data Structures?
+### 💡 Why Use Data Structures?
 
 If you have several similar pieces of data to store and manipulate later, using a data structure allows for organized and efficient operations. Here's an example:
 
 ------------------------------------------------------------------------
 
-### Example: Storing Student Grades
+#### Example: Storing Student Grades
 
 Imagine you have 5 students in a class who took a final exam. Their grades need to be stored for future calculations.
 
-#### Without a Data Structure
+##### Without a Data Structure
 
 Using only data types, you could store the grades in separate variables like this:
 
@@ -53,7 +53,7 @@ student5 = 88
 
 This approach works but becomes cumbersome as the number of students increases. Operations like calculating the average grade or updating a grade require manual effort for each variable.
 
-#### With a Data Structure (Array)
+##### With a Data Structure (Array)
 
 Instead, you can use an array to store the grades:
 
@@ -80,7 +80,7 @@ student_grades.append(95)
 student_grades.pop(1)  # Removes the second student's grade
 ```
 
-#### With a Data Structure (Hash Table)
+##### With a Data Structure (Hash Table)
 
 If you need to associate grades with student names for better clarity, a hash table (dictionary) works even better:
 
@@ -115,7 +115,7 @@ student_grades["Chris"] = 95  # Adds Chris with a grade of 95
 del student_grades["Taylor"]  # Removes Taylor
 ```
 
-### Common Data Structures
+### 🛠️ Common Data Structures
 
 Understanding the unique characteristics of different data structures—whether they are ordered or unordered, and what operations they excel at—helps in selecting the best one for a given task.
 
@@ -131,13 +131,13 @@ Understanding the unique characteristics of different data structures—whether 
 
 -   *Graphs*: A network of nodes connected by edges, perfect for modeling relationships and performing pathfinding operations.
 
-### Data Structures vs. Abstract Data Types (ADT)
+### 🔍 Data Structures vs. Abstract Data Types (ADT)
 
 Even if you're not very familiar with the different data structures I’ve mentioned, you're likely familiar with Abstract Data Types (ADTs) like lists, sets, and dictionaries. ADTs essentially define the operations or functionalities you can perform on data, while data structures are the low-level implementations that make those operations possible. Using the car example again, the ADT represents the car’s functionalities—driving, braking, and steering—while the data structures are the specific building blocks like the engine, wheels, and frame that make those functionalities work. ADTs are high-level abstract concepts, while data structures are the concrete details that enable those concepts to function.
 
 Knowing just the ADT and its functionality will take you a long way, and you don't necessarily need to understand the underlying data structures to perform different tasks. For instance, a list can be implemented using either an array or a linked list. When you use the built-in `list` function, like `my_list = []`, you don’t need to know whether it's implemented using an array or a linked list. However, understanding the underlying data structure can be important for optimizing performance, such as improving runtime or space complexity. This deeper understanding helps you make more efficient decisions when choosing how to implement solutions, especially when performance is critical.
 
-### Common ADTs
+### 🗂️ Common ADTs
 
 Here are some common ADTs and the data structures used to implement them:
 
@@ -150,7 +150,7 @@ Here are some common ADTs and the data structures used to implement them:
 -   *Priority Queue*: Binary Heap, Fibonacci Heap
 -   *Dictionary*: Hash Table, BST
 
-### Real World Applications
+### 🌍 Real World Applications
 
 Different data structures are utilized in real-world applications to optimize performance, manage data efficiently, and solve complex problems. Here are some practical implementations of commonly used data structures:
 
@@ -172,7 +172,7 @@ Different data structures are utilized in real-world applications to optimize pe
 
 -   *Graph*: Graphs are used to model networks like social media connections, transportation systems, and web pages.
 
-### Conclusion
+### 💭 Conclusion
 
 These are just a few examples of how data structures are applied in the real world, and there are countless other uses that I haven’t covered here. It took me some time to truly grasp the key differences between data structures and other data types. This brief introduction to data structures serves as a way for me to reinforce my own understanding and, hopefully, help others in the process.
 
@@ -180,18 +180,18 @@ Data structures are fundamental tools for organizing and managing data efficient
 
 If you found this post helpful or have any feedback, I’d love to hear your thoughts—feel free to leave a comment below!
 
-### Reference
+### 🔗 Reference
 
 zyBooks, a Wiley brand. (2024). Data Structures With Python. https://learn.zybooks.com/zybook/MONTCLAIRCSIT506ZharriFall2024 (accessed 2024).
 
-<div id="comment-section">
-  <script src="https://utteranc.es/client.js"
+::: {#comment-section}
+```{=html}
+<script src="https://utteranc.es/client.js"
           repo="Sijan14/sijan_portfolio"
           issue-term="pathname"
           theme="github-light"
           crossorigin="anonymous"
           async>
   </script>
-</div>
-
-
+```
+:::

@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/posts.html</loc>
-    <lastmod>2025-01-01T22:58:03.307Z</lastmod>
+    <lastmod>2025-01-05T20:54:38.058Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/index.html</loc>
-    <lastmod>2025-01-01T19:55:12.638Z</lastmod>
+    <lastmod>2025-01-05T20:42:51.056Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/index.html</loc>
-    <lastmod>2025-01-01T22:03:56.875Z</lastmod>
+    <lastmod>2025-01-05T20:29:21.457Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/projects.html</loc>
-    <lastmod>2025-01-01T21:48:56.404Z</lastmod>
+    <lastmod>2025-01-05T20:16:35.738Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/about.html</loc>
@@ -22,6 +22,10 @@
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/posts/2024-12-31-R-Workshop/index.html</loc>
-    <lastmod>2025-01-01T22:57:59.902Z</lastmod>
+    <lastmod>2025-01-05T20:54:34.176Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/index.html</loc>
+    <lastmod>2025-01-05T20:26:17.482Z</lastmod>
   </url>
 </urlset>
