@@ -1,6 +1,6 @@
 ---
-title: "Making Training Stick: Insights from a Meta-Analysis on Transfer of Training"
-description: ""
+title: "Making Training Stick: Insights from a Meta-Analysis on Training Transfer"
+description: "Transfer of training is a major challenge for organizations. Drawing on a seminal meta-analysis (Blume et al., 2010), this blog explores key factors that contribute to effective training transfer, providing insights to bridge the gap between training and on-the-job performance."
 date: 3-13-2024
 categories: [Training]
 citation: 
