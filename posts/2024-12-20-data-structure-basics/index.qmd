@@ -2,7 +2,7 @@
 title: "What Are Data Structures? A Simple Introduction for Beginners"
 description: "Learn what data structures are, why they matter, and how they can improve the efficiency of your code. This blog introduces key concepts in an easy-to-understand way for those just starting their coding journey."
 date: 12-20-2024
-categories: [Data Science] # self-defined categories
+categories: [Data Science, Programming] # self-defined categories
 citation: 
   url: https://sijan14.github.io/sijan_portfolio/posts/2024-12-20-data-structure-basics/ 
 image: ds_ai.jpg

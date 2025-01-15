@@ -13,6 +13,7 @@ format:
     highlight-style: gruvbox-dark
 editor: visual
 ---
+For my master’s thesis, I tackled the challenging task of translating text into embeddings using LLM to make predictions—a process that was both demanding and deeply rewarding. In this blog, I aim to simplify that journey for you by breaking down the methods and insights that contributed to the success of my thesis.
 
 ## 📦 Importing LLM & Tokenizer
 
