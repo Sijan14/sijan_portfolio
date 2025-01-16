@@ -7,6 +7,142 @@ format:
     toc: false
 ---
 
+### ️📏 Job Satisfaction Measurement using LLM-embeddings
+
+<p>[Date:]{style="font-weight: bold;"} January 16, 2025</p>
+
+Traditional Likert scales, the preferred choice for many psychology researchers, come with notable limitations: predefined response options that constrain responses, careless responding, debates about whether response categories are truly equidistant, and susceptibility to common method bias, which can inflate relationships. In contrast, natural language, expressed through open text, is how we naturally communicate. What if we could leverage this to measure psychological constructs?
+
+In my master’s thesis, I explore the use of BERT-based LLM embeddings to quantify text responses and measure job attitudes, with a focus on job satisfaction. I evaluate the effectiveness of these embeddings by examining both their construct validity and criterion validity in assessing job satisfaction.
+
+::: {layout-ncol="2"}
+::: {style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;"}
+<img src="ma_thesis/RQ1_final_plot.png" alt="Correlation between LLM-predicted and actual job satisfaction" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
+
+<br>
+
+<p style="font-weight: bold;">
+
+*Figure 1*: Correlation between LLM-predicted and actual job satisfaction
+
+</p>
+:::
+
+::: {style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;"}
+<img src="ma_thesis/confusion_matrix.png" alt="turnover" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
+
+<br>
+
+<p style="font-weight: bold;">
+
+*Figure 2*: Predicting Turnover Intention using LLM-embeddings
+
+</p>
+:::
+:::
+
+Additionally, I conducted exploratory analyses to provide practical insights into implementing LLMs. These analyses identified the optimal variations of BERT and hidden layers for accurately measuring job-related psychological attitudes. For a breakdown of some of the embedding process and feeding the embeddings to ml model see my blog titled For a detailed breakdown of the embedding process and how these embeddings are fed into machine learning models, check out my blog post titled ["From Text to Predictions"](https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/).
+
+<br>
+
+::: {layout-ncol="2"}
+```{r, echo=FALSE, warning=FALSE}
+suppressMessages(library(plotly))
+suppressMessages(library(dplyr))
+
+# Data for BERTBASE performance comparison
+data <- data.frame(
+  TextEmbeddings = rep(c("Last Hidden", "Second-to-Last Hidden", "Concatenate Last Four Hidden", "Mean Last Four Hidden", "Sentence-level Mean Last Four Hidden"), each = 2),
+  Metric = rep(c("Correlation", "RMSE"), times = 5),
+  Value = c(0.62, 0.63, 0.62, 0.63, 0.63, 0.62, 0.64, 0.62, 0.69, 0.57),
+  Level = rep(c("Word-level", "Word-level", "Word-level", "Word-level", "Sentence-level"), each = 2),
+  Layer = rep(c("Layer 12", "Layer 11", "Concatenation of Layers 9-12", "Average of Layers 9-12", "Average of Layers 9-12"), each = 2)
+)
+
+# Calculate the mean correlation for each embedding type
+order <- data %>%
+  filter(Metric == "Correlation") %>%
+  group_by(TextEmbeddings) %>%
+  summarize(MeanCorrelation = mean(Value)) %>%
+  arrange(MeanCorrelation) %>%
+  pull(TextEmbeddings)
+
+# Create a bar plot
+fig <- plot_ly(
+  data,
+  x = ~factor(TextEmbeddings, levels = order), # Reorder categories by correlation
+  y = ~Value,
+  type = 'bar',
+  color = ~Metric,
+  colors = c("Correlation" = "#5C85FF", "RMSE" = "#F0B2F0"),
+  text = ~paste("Metric:", Metric, "<br>Value:", Value, "<br>Level:", Level, "<br>Layer:", Layer),
+  hoverinfo = 'text',
+  barmode = 'group'
+) %>%
+  layout(
+    title = "Performance Comparison of BERTBASE Hidden Layers",
+    xaxis = list(
+      title = "BERTBASE Layers (Ordered by Correlation)",
+      showticklabels = FALSE # Hide reordered x-axis labels
+    ),
+    yaxis = list(title = "Value", range = c(0.5, 0.7)),
+    legend = list(title = list(text = "Metric")),
+    colorway = c("#636EFA", "#EF553B"),
+    width = 560,
+    height = 320
+  )
+
+fig
+```
+
+```{r, warning=FALSE, echo=FALSE}
+# Data for BERT Variants performance comparison
+data_variant <- data.frame(
+  Model = c(
+    "BERTBASE uncased", "BERTBASE cased", "BERTLARGE uncased", 
+    "BERTLARGE cased", "DistilBERTBASE uncased", "DistilBERTBASE cased"
+  ),
+  Metric = rep(c("Correlation", "RMSE"), each = 6),
+  Value = c(0.64, 0.67, 0.58, 0.66, 0.66, 0.62, 0.62, 0.60, 0.64, 0.60, 0.61, 0.62)
+)
+
+# Calculate the mean correlation for each model to order the bars
+order_variant <- data_variant %>%
+  filter(Metric == "Correlation") %>%
+  arrange(Value) %>%
+  pull(Model)
+
+# Create a bar plot
+fig_variant <- plot_ly(
+  data_variant,
+  x = ~factor(Model, levels = order_variant), # Reorder categories by correlation
+  y = ~Value,
+  type = 'bar',
+  color = ~Metric,
+  colors = c("Correlation" = "#FFA07A", "RMSE" = "#20B2AA"), # New color palette
+  text = ~paste("Metric:", Metric, "<br>Value:", Value, "<br>Model:", Model),
+  hoverinfo = 'text',
+  barmode = 'group'
+) %>%
+  layout(
+    title = "Performance Comparison of BERT Variants",
+    xaxis = list(
+      title = "BERT Variants (Ordered by Correlation)",
+      showticklabels = FALSE # Show reordered x-axis labels
+    ),
+    yaxis = list(title = "Value", range = c(0.5, 0.7)),
+    legend = list(title = list(text = "Metric")),
+    colorway = c("#FFA07A", "#20B2AA"),
+    width = 560,
+    height = 320
+  )
+
+fig_variant
+
+```
+
+:::
+
 ### 🕰️ Delay Discounting as a Latent Factor
 
 <p>[Date:]{style="font-weight: bold;"} December 15, 2024</p>
@@ -133,7 +269,7 @@ fig <- plot_ly(
     yaxis = list(title = "Value", range = c(0, 1)),
     xaxis = list(title = "Metrics"),
     width = 800,  # Set plot width
-    height = 600, # Set plot height
+    height = 450, # Set plot height
     updatemenus = list(
       list(
         buttons = list(
