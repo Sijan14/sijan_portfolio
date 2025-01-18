@@ -41,7 +41,7 @@ In my master’s thesis, I explore the use of BERT-based LLM embeddings to quant
 :::
 :::
 
-Additionally, I conducted exploratory analyses to provide practical insights into implementing LLMs. These analyses identified the optimal variations of BERT and hidden layers for accurately measuring job-related psychological attitudes. For a breakdown of some of the embedding process and feeding the embeddings to ml model see my blog titled For a detailed breakdown of the embedding process and how these embeddings are fed into machine learning models, check out my blog post titled ["From Text to Predictions"](https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/).
+Additionally, I conducted exploratory analyses to provide practical insights into implementing LLMs. These analyses identified the optimal variations of BERT and hidden layers for accurately measuring job-related psychological attitudes. For a detailed breakdown of the embedding process and how these embeddings are fed into machine learning models, check out my blog post titled ["From Text to Predictions"](https://sijan14.github.io/sijan_portfolio/posts/2024-05-21-LLM-BERT/).
 
 <br>
 
@@ -143,9 +143,151 @@ fig_variant
 
 :::
 
+---
+
+### 💼 Adverse Impact Analysis
+
+<p>[Date:]{style="font-weight: bold;"} December 22, 2024</p>
+
+In line with EEOC Uniform Guidelines, hiring practices can be discriminatory due to disparate treatment (intentional) or adverse impact (unintentional). Adverse impact arises when the selection ratio for protected groups is less than four-fifths of that for the majority group (Spector, 2020). Thus, it is crucial for companies to measure these critical metrics and take necessary steps to adjust their assessments if adverse impact is detected.
+
+For this project, I conducted an adverse impact analysis to evaluate whether an assessment used for management candidates disproportionately affects protected groups. 
+
+::: {style="text-align: center;"}
+
+<!-- Dropdown for selecting image group -->
+<select id="imageGroupDropdown" onchange="showImages()" style="margin-bottom: 20px; padding: 5px;">
+  <option value="group1">Adverse Impact Ratio</option>
+  <option value="group2">Passing Ratio</option>
+</select>
+
+<!-- Container for images -->
+<div id="group1" class="image-group" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="adverse_impact/avi_ethnicity.png" alt="Image 1"  class="zoom-image" style="cursor: pointer; max-width: 40%; height: auto; margin-right: 25px;">
+  <img src="adverse_impact/avi_gender.png" alt="Image 2" class="zoom-image" style="cursor: pointer; max-width: 40%; height: auto; margin-left: 25px;">
+</div>
+
+<div id="group2" class="image-group" style="display: none; flex; justify-content: center; gap: 20px;">
+  <img src="adverse_impact/pass_ethnicity.png" alt="Image 3" class="zoom-image" style="cursor: pointer; max-width: 40%; height: auto; margin-right: 25px;">
+  <img src="adverse_impact/pass_gender.png" alt="Image 4" class="zoom-image" style="cursor: pointer; max-width: 40%; height: auto; margin-left: 25px;">
+</div>
+
+<script>
+  function showImages() {
+    const selectedGroup = document.getElementById('imageGroupDropdown').value;
+    document.querySelectorAll('.image-group').forEach(group => {
+      group.style.display = 'none'; // Hide all groups
+    });
+    document.getElementById(selectedGroup).style.display = 'flex'; // Show selected group
+  }
+</script>
+
+:::
+
+<br>
+
+Additionally, I analyzed dimension scores across positions held by applicants and examined whether passing rates varied by month.
+
+:::{layout-ncol="2"}
+
+::: {style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;"}
+<!-- Dropdown for selecting image -->
+<select id="imageDropdown" onchange="displaySelectedImage()" style="padding: 5px; display: block; margin: 0 auto;">
+  <option value="image1">Change Management</option>
+  <option value="image2">Interpersonal Skills</option>
+  <option value="image3">Work Orientation</option>
+  <option value="image4">Business Reasoning</option>
+</select>
+
+<br>
+
+<!-- Container for images -->
+<div id="image1" class="image" style="display: block; text-align: center;">
+  <img src="adverse_impact/change_management.png" alt="Change Management" class="zoom-image" style="cursor: pointer; max-width: 80%; height: auto;">
+</div>
+
+<div id="image2" class="image" style="display: none; text-align: center;">
+  <img src="adverse_impact/interpersonal_skills.png" alt="Interpersonal Skills" class="zoom-image" style="cursor: pointer; max-width: 80%; height: auto;">
+</div>
+
+<div id="image3" class="image" style="display: none; text-align: center;">
+  <img src="adverse_impact/work_orientation.png" alt="Work Orientation" class="zoom-image" style="cursor: pointer; max-width: 80%; height: auto;">
+</div>
+
+<div id="image4" class="image" style="display: none; text-align: center;">
+  <img src="adverse_impact/business_reasoning.png" alt="Business Reasoning" class="zoom-image" style="cursor: pointer; max-width: 80%; height: auto;">
+</div>
+
+<script>
+  function displaySelectedImage() {
+    const selectedImage = document.getElementById('imageDropdown').value;
+    
+    // Hide all images
+    document.querySelectorAll('.image').forEach(image => {
+      image.style.display = 'none';
+    });
+    
+    // Show selected image
+    document.getElementById(selectedImage).style.display = 'block';
+  }
+</script>
+:::
+
+:::{style="text-align:center;"}
+<br>
+
+```{r, echo=FALSE, warning=FALSE}
+# Data for the plot
+data_month <- data.frame(
+  Month = c("April", "May", "June"),
+  PassingRate = c(0.782, 0.823, 0.793)
+)
+
+# Create an interactive scatterplot using Plotly
+fig <- plot_ly(
+  data = data_month,
+  x = ~factor(Month, levels = c("April", "May", "June")),
+  y = ~PassingRate,
+  type = "scatter",
+  mode = "lines+markers",
+  line = list(color="red"),
+  marker = list(color="black")
+)
+
+# Customize layout
+fig <- fig %>%
+  layout(
+    title = "Passing Rates by Month",
+    title = "Passing Rates by Month",
+    xaxis = list(
+      title = "Month",
+      showline = TRUE,             # Enable border on x-axis
+      linecolor = "black",         # X-axis border color
+      linewidth = 2                # X-axis border thickness
+    ),
+    yaxis = list(
+      title = "Passing Rate",
+      range = c(0.7, 0.9),
+      showline = TRUE,             # Enable border on y-axis
+      linecolor = "black",         # Y-axis border color
+      linewidth = 2                # Y-axis border thickness
+    ),
+    width = 420,
+    height = 360
+  )
+
+# Display the plot
+fig
+```
+:::
+
+:::
+
+---
+
 ### 🕰️ Delay Discounting as a Latent Factor
 
-<p>[Date:]{style="font-weight: bold;"} December 15, 2024</p>
+<p>[Date:]{style="font-weight: bold;"} December 5, 2024</p>
 
 This project examines the latent factor structure of delay discounting, the tendency to prioritize immediate rewards over delayed ones, which is linked to behavioral outcomes such as substance abuse gambling, credit card debt, and poor academic performance (Wölfling et al., 2020). Previous studies have used various methods to measure delay discounting, but the findings have been inconsistent, partly due to differences in operationalization. This study uses confirmatory factor analysis (CFA) to explore the underlying latent factors of delay discounting and their relationship to behavioral outcomes, providing a clearer understanding of the construct and its implications.
 
