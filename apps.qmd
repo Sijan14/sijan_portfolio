@@ -1,0 +1,67 @@
+---
+title: "Apps"
+format:
+  html:
+    embed-resources: true
+    allow-raw-html: true
+    toc: true
+---
+
+One of my main goals as a statistics professor is to make statistics understandable, intuitive and even enjoyable. I am a big believer in the power of visualization, so I have built interactive Shiny apps that let students explore statistical concepts in a dynamic way. By manipulating different parameters and seeing the results firsthand, my hope for my students is that they develop a much deeper understanding that sticks with them.
+
+### 📊️ One-Sample t-Test
+<p>[Date:]{style="font-weight: bold;"} January 27, 2025 </p>
+
+Explore and visualize how degrees of freedom and p-values affect the shape of the t-distribution and the critical regions. Choose your test type and hit "Generate Plot" to see it in action.
+
+<br>
+<a href="https://sijan1.shinyapps.io/t-test_app/" target="_blank">
+  <img src="shiny_apps/one_t-test.png" alt="One-Sample t-Test" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
+</a>
+
+### 🔬️ Two-Sample t-Test
+<p>[Date:]{style="font-weight: bold;"} January 20, 2025 </p>
+
+Master Two-Sample t-Tests! This interactive visualization makes it easy to understand the core concepts. Manipulate the parameters and see the impact on the distributions and the critical region.
+
+<br>
+<a href="https://sijan1.shinyapps.io/t-test_two_app/" target="_blank">
+  <img src="shiny_apps/two_t-test.png" alt="Two-Sample t-Test" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
+</a>
+
+
+### 🧮️ Probabilty with Z-scores
+<p>[Date:]{style="font-weight: bold;"} January 7, 2025 </p>
+
+This app lets you visualize the probability between two z-scores in a standard normal distribution. 📈  Just enter the lower and upper z-scores, and see the shaded area representing the probability.  Click "Calculate Probability" to get the answer! 
+
+<br>
+<a href="https://sijan1.shinyapps.io/prob_app/" target="_blank">
+  <img src="shiny_apps/prob_z.png" alt="Calculating Probability Using Z-scores" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
+</a>
+
+
+### ⚙️️ Explore Normal Distribution
+<p>[Date:]{style="font-weight: bold;"} December 20, 2024 </p>
+
+Visualize how changing the mean, standard deviation, and applying transformations (addition/subtraction and multiplication/division to each data point) affects the distribution of a simulated dataset.
+
+<br>
+<a href="https://sijan1.shinyapps.io/dist_app/" target="_blank">
+  <img src="shiny_apps/norm_dis.png" alt="Normal Distribution Transformation" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
+</a>
+
+```{=html}
+<style>
+  /* CSS for zoom effect on hover */
+  .zoom-image {
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Added border transition */
+  }
+
+  .zoom-image:hover {
+    transform: scale(1.1);  /* Adjust the scale factor for zoom level */
+    z-index: 10;
+    border: 1px solid black;  /* Add black border on hover */
+  }
+</style>
+```
