@@ -19,6 +19,10 @@ Explore and visualize how degrees of freedom and p-values affect the shape of th
   <img src="shiny_apps/one_t-test.png" alt="One-Sample t-Test" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
 </a>
 
+<br>
+
+---
+
 ### 🔬️ Two-Sample t-Test
 <p>[Date:]{style="font-weight: bold;"} January 20, 2025 </p>
 
@@ -29,6 +33,9 @@ Master Two-Sample t-Tests! This interactive visualization makes it easy to under
   <img src="shiny_apps/two_t-test.png" alt="Two-Sample t-Test" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
 </a>
 
+<br>
+
+---
 
 ### 🧮️ Probabilty with Z-scores
 <p>[Date:]{style="font-weight: bold;"} January 7, 2025 </p>
@@ -40,6 +47,9 @@ This app lets you visualize the probability between two z-scores in a standard n
   <img src="shiny_apps/prob_z.png" alt="Calculating Probability Using Z-scores" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
 </a>
 
+<br>
+
+---
 
 ### ⚙️️ Explore Normal Distribution
 <p>[Date:]{style="font-weight: bold;"} December 20, 2024 </p>
@@ -50,6 +60,25 @@ Visualize how changing the mean, standard deviation, and applying transformation
 <a href="https://sijan1.shinyapps.io/dist_app/" target="_blank">
   <img src="shiny_apps/norm_dis.png" alt="Normal Distribution Transformation" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 300px;"/>
 </a>
+
+<br>
+
+---
+
+### ️️🗓️ StrikeThrough: Command-Line To-Do List
+<p>[Date:]{style="font-weight: bold;"} January 26, 2025 </p>
+
+For my CS50 Programming with Python final project, I built StrikeThrough, a simple yet effective command-line to-do list application. Inspired by the satisfying act of crossing off completed tasks, StrikeThrough lets you add tasks with due dates, automatically sorting your list for optimal prioritization. You can even break down larger tasks into subtasks for finer-grained tracking. Completed items are visually marked with a strikethrough and moved to the bottom of the list, providing a clear sense of progress. You can download the app [here](https://drive.google.com/file/d/1g4HEN4KiCVQbSTHyaizIjz3xG9jtZE7b/view?usp=sharing). For a tutorial of the app, see this [video](https://youtu.be/s2uiXC0TM0I).
+
+:::{layout-ncol="2"}
+::: {style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;"}
+<img src="to-do_app/first.png" alt="Correlation between LLM-predicted and actual job satisfaction" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 250px;"/>
+:::
+
+::: {style="text-align:center; border: 1px black; padding: 10px; border-radius: 8px;"}
+<img src="to-do_app/second.png" alt="Correlation between LLM-predicted and actual job satisfaction" class="zoom-image" style="cursor: pointer; display: block; margin: 0 auto; max-width: auto; height: 250px;"/>
+:::
+:::
 
 ```{=html}
 <style>
