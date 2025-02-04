@@ -34,6 +34,7 @@ format:
     embed-resources: true
     allow-raw-html: true
     smooth-scroll: true
+    css: styles.css
 
 editor: visual
 

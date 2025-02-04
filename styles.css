@@ -1,1 +1,20 @@
-/* css styles */
+/* Style for Navbar Links */
+.navbar-nav .nav-link {
+    display: inline-block;
+    padding: 10px 15px;
+    
+    color: #D3D3D3 !important; /* White text */
+    
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #FFAB91 !important; /* Gold/yellow text */
+    border-color: #ffcc00;
+}
+
