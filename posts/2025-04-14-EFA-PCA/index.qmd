@@ -1,6 +1,6 @@
 ---
 title: "Your Data Deserves Better: Understanding When to Use EFA or PCA"
-description: "Navigating a career in Industrial-Organizational Psychology can feel overwhelming, but the right resources can make all the difference. This guide provides a comprehensive overview of career paths, job search strategies, hiring companies, and application tips to help students confidently transition into the workforce."
+description: "If you’ve ever opened SPSS -> Dimensionality Reduction -> Factor and wondered whether to click “Principal Axis Factoring” (aka EFA) or “Principal Components,” (aka PCA) you’re not alone. These two methods sit side-by-side, look almost identical, and are often mixed up—even in published research. But they serve very different purposes, especially when we’re trying to understand psychological constructs. In this post, I’ll walk you through what those differences are and why they matter."
 date: 4-14-2025
 categories: [Psychometrics, Statistics]
 citation: 
@@ -14,433 +14,155 @@ format:
 editor: visual
 ---
 
-<div style="text-align: center;">
-  <img src="I:O_career_guide.png" alt="I-O Career Guide" width="500">
-</div>
+## 🌟 Introduction
 
-## 🌟 I/O Careers
-Before exploring the diverse career paths within Industrial-Organizational (I/O) Psychology, it's essential to first understand the distinction between its two primary domains: the Industrial (I) side and the Organizational (O) side.
+Factor analysis is one of the most important tools psychometricians use to understand latent constructs. Before we jump into the analysis itself, let’s take a step back and talk about what a latent construct even is (in case you are not familliar). A construct is a theoretical, abstract idea that we can’t directly measure. Most psychological things fall under this category—our emotions, thoughts, internal processes, motivations, attitudes… none of this is directly visible. That’s why we call them latent constructs (latent = hidden).
 
-<p>The [Industrial side]{style="font-weight: bold;"} focuses on personnel-related processes, such as employee selection, training, performance appraisal, and job analysis. It applies psychological principles to ensure fair, effective, and efficient workforce management (Spector, 2021).</p>
-
-<p>The [Organizational side]{style="font-weight: bold;"}, on the other hand, examines broader workplace dynamics, including motivation, leadership, team effectiveness, work attitudes, and organizational culture. It aims to enhance employee well-being and overall organizational performance (Muchinsky & Culbertson, 2020).</p>
-
-::: {style="text-align:center; padding: 10px; border-radius: 8px;"}
-<img src="I_and_O.jpeg" alt="I/O Career Guide" class="zoom-image" 
-     style="cursor: pointer; display: block; margin: 0 auto; max-width: 100%; height: 300px;"/>
-:::
-
-<div style="text-align: center; font-size: 0.7em; margin-top: 2rem;">
-  Source: <a href="https://www.linkedin.com/in/danielle-suprick/" target="_blank">Danielle Suprick</a>
-</div>
+Even though we can’t observe a construct directly, we can infer it through things we can observe—like self-reported behaviors, responses to questionnaire items, performance on tasks, physiological signals, and so on.
 
 
-```{=html}
-<style>
-  /* CSS for zoom effect on hover */
-  .zoom-image {
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Added border transition */
-  }
+## 🔎 A Quick Example
 
-  .zoom-image:hover {
-    transform: scale(1.1);  /* Adjust the scale factor for zoom level */
-    z-index: 10;
-    border: 1px solid black;  /* Add black border on hover */
-  }
-</style>
-```
+Think about intelligence testing. “Intelligence” is not something we can see or touch. But we can observe things like quantitative reasoning, verbal reasoning, and problem-solving speed. By measuring those observable skills, we infer something about the latent construct of intelligence.
 
-## 🔎 Job Search
-Now let's break them down further into specific categories and job titles. These titles could also be used as keywords to further refine your job search.
+Now, yes—there’s a huge debate about what intelligence even is, whether it’s innate, how much it can change, and whether practice effects undermine certain definitions. That’s a conversation for another day. The point is: [psychometric tests let us learn about latent factors through observable variables that are easy to measure]{style="font-weight: bold;"}. And once we measure them, we can evaluate reliability, validity, and use them to predict or understand all sorts of fun things in academic and applied settings.
 
-### I-O Titles
+------------------------------------------------------------------------
 
-<!-- ================== ROW 1 ================== -->
-::: {.grid .gap-4 style="grid-template-columns: repeat(2, 1fr); align-items: stretch;"}
-::: {.col style="background-color: #E3FCEC; padding: 1rem; border-radius: 0.5rem;"}
-#### Analytics/Assessment
-- Head of People Analytics  
-- People Analytics Consultant  
-- People Analytics Data Scientist  
-- People Data Scientist  
-- Program Analyst  
-- Senior Manager, Business Analysis  
-- Sr Personnel Research Analyst  
-- Senior People Analytics Analyst  
-- Survey Analyst  
-- Test Developer  
-- Workforce Analyst  
-- Workforce Intelligence  
-- Psychometric Consultant  
-- Evaluation Consultant
-- Human Capital Analytics
-- Talent Analytics
-- HR Analyst – Business Partner  
-:::
+## 🌝 EFA vs. CFA: what’s the difference?
+There are two types of factor analysis:
 
-::: {.col style="background-color: #E3F4FC; padding: 1rem; border-radius: 0.5rem;"}
-#### HR Management
-- HR Business Partner – Benefits, Compensation, HRIS  
-- HR Consultant
-- HR Director  
-- HR Generalist  
-- HR Manager  
-- HR Specialist  
-- HR Supervisor  
-- Human Capital Specialist  
-- Director of Acquisition  
-- Senior Recruiter  
-- Selection Consultant  
-- Human Capital Consultant  
-- Associate. Manager, Global  
-:::
-:::
+#### Confirmatory Factor Analysis (CFA)
+CFA is used when you already have a theory or hypothesis. You’re basically asking, “Does my data support the structure I expect?” You test whether the model you believe in can be reproduced using your observed data.
 
-<!-- ================== ROW 2 ================== -->
-::: {.grid .gap-4 .mt-4 style="grid-template-columns: repeat(2, 1fr); align-items: stretch;"}
-::: {.col style="background-color: #FFF7F1; padding: 1rem; border-radius: 0.5rem;"}
-#### Operations/Business
-- Operations Analyst  
-- Operations Manager
-- People Operations  
-- People Operations Analyst  
-- People Operations Program Specialist  
-- Process Improvement Manager  
-- Project Management Lead  
-- Project Manager  
-:::
-::: {.col style="background-color: #F3E8FE; padding: 1rem; border-radius: 0.5rem;"}
-#### Learning/Training
-- Leadership Development  
-- Instructional Systems Designer  
-- Instructional Systems Specialist  
-- Learning and Development  
-- Program Manager  
-- Learning Program Manager
-- Training Coordinator  
-- Training Specialist  
-:::
-:::
+#### Exploratory Factor Analysis (EFA)
+EFA is used when you don’t have a strong theory yet. You explore the data to see how many factors best explain the relationships among your observed variables. It’s like asking: “What structure naturally emerges from these items?”
 
-<!-- ================== ROW 3 ================== -->
-::: {.grid .gap-4 .mt-4 style="grid-template-columns: repeat(2, 1fr); align-items: stretch;"}
+For example, imagine personality research didn’t exist yet. You write a ton of items that describe different behaviors and attitudes. You don’t know how many dimensions of personality there are, or what they are. You run EFA to see which items “hang together,” and maybe you discover several clusters of items. You then interpret and name those clusters—maybe you end up with something like Oppenness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.
 
-::: {.col style="background-color: #FAF1D4; padding: 1rem; border-radius: 0.5rem;"}
-#### Research/Consulting
-- Evaluation Consultant  
-- Research Scientist
-- Research Consultant
-- Senior Consultant
-- Researcher  
-- Psychologist  
-- Staff/Senior Scientist  
-- Research Assistant  
-- Research Associate
-:::
+Mathematically, EFA is asking:
+Can a smaller number of underlying factors explain the variance and correlations we see in these measured variables?
 
-::: {.col style="background-color: #E8F9FE; padding: 1rem; border-radius: 0.5rem;"}
-#### Career Development
-- Career Development  
-- Career Specialist  
-- Executive Coach  
-- Management Development Specialist  
-- Talent and Experience Programs Specialist  
-- Talent Development  
-- Talent Insights  
-- Leadership Development  
-- Consultant  
-:::
+It’s really just statistics doing what it always does: trying to explain variation.
 
-::: {.col style="background-color: #FFF1F3; padding: 1rem; border-radius: 0.5rem;"}
-#### OD & Wellness/Engagement
-- Organizational Development Specialist  
-- Organizational Psychologist  
-- Personnel Psychologist
-- Internal Audit and Risk Specialist
-- Employee Listening
-- Employee Wellness  
-- Management Consultant 
-- Organizational Development & Effectiveness Consultant  
-- Head of Organizational Behavior Services  
-:::
+- [ANOVA]{style="font-weight: bold;"}: do different groups explain variance in an outcome?
+- [Regression]{style="font-weight: bold;"}: do predictors explain variance in an outcome?
+- [EFA]{style="font-weight: bold;"}: do latent factors explain variance in many observed variables?
+Same logic—different target.
 
-::: {.col style="background-color: #EDFBEA; padding: 1rem; border-radius: 0.5rem;"}
-#### Performance Management
-- Talent Management Director  
-- Talent Management Specialist  
-- Performance Consultant  
-- Senior Consultant, Workforce Management  
-:::
+------------------------------------------------------------------------
+## 🙉 So where does PCA come in, and why is it a problem?
+
+Another technique commonly used in our field is Principal Components Analysis (PCA). It looks very similar to EFA, so similar that software (like SPSS) puts them under the same menu. Unfortunately, this causes a lot of researchers to confuse the two and accidentally use PCA when they meant to use EFA.
+
+And the problem is widespread:
+In a review of two measurement journals across six years, 64% of papers used PCA, while only 33% used EFA (Osborne et al., 2008). PCA is simply easier to click, so people default to it even when it’s not appropriate.
+Let’s get clear about the difference.
+
+
+## The Key Distinction
+
+Both PCA and EFA reduce data, but they do it for very different reasons.
+
+#### EFA: modeling underlying causes
+EFA assumes that latent factors cause the observed variables.
+
+The idea is:
+
+        Factor → Variables
+
+Mathematically:
+
+::: {style="text-align: center;"}
+
+<img src="EFA.png" alt="EFA" width="300"/>
 
 :::
-<div style="text-align: center; font-size: 0.7em; margin-top: 2rem;">
-  Source: <a href="https://www.linkedin.com/in/amira-marquez-95045516a/" target="_blank">Amira Marquez Moreno</a>
+
+<div style="font-size: 12px; margin-top: 5px;">
+Source: Karen Grace-Martin, <a href="http://TheAnalysisFactor.com">TheAnalysisFactor.com</a>
 </div>
 
-### Job Boards
 
-::: {.grid .gap-4 style="grid-template-columns: repeat(5, auto); justify-content: center; align-items: center; margin-top: 2rem;"}
-::: {.col}
-[![](logo/SIOP_logo.png){width=200px}](https://www.siop.org/careers){target="_blank"}
-:::
-::: {.col}
-[![](logo/linkedin_logo.png){width=100px}](https://www.linkedin.com/jobs){target="_blank"}
-:::
-::: {.col}
-[![](logo/Indeed-Symbol.png){width=100px}](https://www.indeed.com){target="_blank"}
-:::
-::: {.col}
-[![](logo/handshake.png){width=80px}](https://app.joinhandshake.com/login){target="_blank"}
-:::
-::: {.col}
-[![](logo/one_model.png){width=200px}](https://www.onemodel.co/roles-in-people-analytics-hr-technology){target="_blank"}
-:::
+#### PCA: creating weighted combinations
+PCA assumes the variables create the components.
+No underlying psychological cause—just weighted math.
+      
+        Variables → Component
+
+Mathematically:
+
+::: {style="text-align: center;"}
+
+<img src="PCA.png" alt="PCA" width="350"/>
+
 :::
 
-## 🏢 Comapnies
-
-<style>
-  /* This rule will apply a two-column layout */
-  .two-column {
-    column-count: 2;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-  }
-</style>
-
-<script>
-  function filterCompanies() {
-    var select = document.getElementById("industrySelect");
-    var industry = select.value;
-    var sections = document.querySelectorAll(".industry-section");
-    sections.forEach(function(section) {
-      if (section.dataset.industry === industry) {
-        section.style.display = "block";
-      } else {
-        section.style.display = "none";
-      }
-    });
-  }
-
-  // On DOMContentLoaded, add "two-column" class to any list with more than 5 companies.
-  document.addEventListener("DOMContentLoaded", function() {
-    var lists = document.querySelectorAll(".industry-section ul");
-    lists.forEach(function(ul) {
-      if (ul.children.length > 10) {
-        ul.classList.add("two-column");
-      }
-    });
-  });
-</script>
-
-<label for="industrySelect">Select Industry:</label>
-<select id="industrySelect" onchange="filterCompanies()">
-  <option value="Consulting">Consulting &amp; Organizational Development</option>
-  <option value="Technology">Technology &amp; Innovation</option>
-  <option value="Healthcare">Healthcare &amp; Pharmaceuticals</option>
-  <option value="Government">Government &amp; Public Sector</option>
-  <option value="Finance">Financial Services</option>
-  <option value="Manufacturing">Manufacturing &amp; Consumer Goods</option>
-</select>
-
-<!-- Consulting & Organizational Development -->
-<div class="industry-section" data-industry="Consulting">
-  <h3>Consulting &amp; Organizational Development</h3>
-  <ul>
-    <li><a href="https://www2.deloitte.com/us/en/careers.html" target="_blank">Deloitte</a></li>
-    <li><a href="https://www.accenture.com/us-en/careers" target="_blank">Accenture</a></li>
-    <li><a href="https://www.pwc.com/us/en/careers.html" target="_blank">PwC</a></li>
-    <li><a href="https://www.ey.com/en_us/careers" target="_blank">Ernst &amp; Young</a></li>
-    <li><a href="https://www.mckinsey.com/careers" target="_blank">McKinsey &amp; Company</a></li>
-    <li><a href="https://www.kornferry.com/careers" target="_blank">Korn Ferry</a></li>
-    <li><a href="https://www.mercer.com/careers.html" target="_blank">Mercer</a></li>
-    <li><a href="https://careers.aon.com/" target="_blank">Aon Hewitt</a></li>
-    <li><a href="https://www.kornferry.com/careers" target="_blank">Hay Group</a></li>
-    <li><a href="https://www.icf.com/careers" target="_blank">ICF</a></li>
-    <li><a href="https://www.gallup.com/careers" target="_blank">Gallup</a></li>
-    <li><a href="https://www.bcg.com/careers" target="_blank">Boston Consulting Group</a></li>
-    <li><a href="https://www.bain.com/careers" target="_blank">Bain &amp; Company</a></li>
-    <li><a href="https://www.humrro.com/careers" target="_blank">HumRRO</a></li>
-    <li><a href="https://home.kpmg/careers" target="_blank">KPMG</a></li>
-    <li><a href="https://www.hoganassessments.com/careers" target="_blank">Hogan</a></li>
-    <li><a href="https://www.talentmetrics.com/careers" target="_blank">Talent Metrics Consulting</a></li>
-    <!-- New Additions -->
-    <li><a href="https://www.hirevue.com/careers" target="_blank">HireVue</a></li>
-    <li><a href="https://www.aptmetrics.com/careers" target="_blank">APT Metrics</a></li>
-    <li><a href="https://www.pdri.org/careers" target="_blank">PDRI</a></li>
-    <li><a href="https://www.valence.com/careers" target="_blank">Valence</a></li>
-    <li><a href="https://www.ets.org/careers" target="_blank">ETS</a></li>
-    <li><a href="https://www.ddiworld.com/careers" target="_blank">DDI</a></li>
-    <li><a href="https://www.shrm.org/careers" target="_blank">SHRM</a></li>
-    <li><a href="https://www.slalom.com/careers" target="_blank">Slalom</a></li>
-    <li><a href="https://www.cultureamp.com/careers" target="_blank">CultureAmp</a></li>
-    <li><a href="https://orgvitality.com/careers" target="_blank">Orgvitality</a></li>
-    <li><a href="https://www.betterup.com/careers" target="_blank">BetterUp</a></li>
-  </ul>
+<div style="font-size: 12px; margin-top: 5px;">
+Source: Karen Grace-Martin, <a href="http://TheAnalysisFactor.com">TheAnalysisFactor.com</a>
 </div>
 
-<!-- Technology & Innovation -->
-<div class="industry-section" data-industry="Technology" style="display:none;">
-  <h3>Technology &amp; Innovation</h3>
-  <ul>
-    <li><a href="https://careers.google.com/" target="_blank">Google</a></li>
-    <li><a href="https://careers.microsoft.com/us/en" target="_blank">Microsoft</a></li>
-    <li><a href="https://www.apple.com/careers/" target="_blank">Apple</a></li>
-    <li><a href="https://www.ibm.com/employment/" target="_blank">IBM</a></li>
-    <li><a href="https://www.amazon.jobs/en/" target="_blank">Amazon</a></li>
-    <li><a href="https://www.metacareers.com/" target="_blank">Meta (Facebook)</a></li>
-    <li><a href="https://jobs.hp.com/" target="_blank">HP</a></li>
-    <!-- New Additions -->
-    <li><a href="https://www.zscaler.com/careers" target="_blank">Zscaler</a></li>
-    <li><a href="https://jobs.netflix.com/" target="_blank">Netflix</a></li>
-  </ul>
-</div>
+So PCA components are literally linear combinations of the observed variables—not latent constructs. 
 
-<!-- Healthcare & Pharmaceuticals -->
-<div class="industry-section" data-industry="Healthcare" style="display:none;">
-  <h3>Healthcare &amp; Pharmaceuticals</h3>
-  <ul>
-    <li><a href="https://jobs.mayoclinic.org/" target="_blank">Mayo Clinic</a></li>
-    <li><a href="https://jobs.clevelandclinic.org/" target="_blank">Cleveland Clinic</a></li>
-    <li><a href="https://www.kaiserpermanentejobs.org/" target="_blank">Kaiser Permanente</a></li>
-    <li><a href="https://careers.jnj.com/" target="_blank">Johnson &amp; Johnson</a></li>
-    <li><a href="https://pfizer.wd3.myworkdayjobs.com/careers" target="_blank">Pfizer</a></li>
-  </ul>
-</div>
+<em>Note.</em> Throughout this blog, I use the terms “item,” “variable,” and “observed variable” interchangeably, as they refer to the same concept.
 
-<!-- Government & Public Sector -->
-<div class="industry-section" data-industry="Government" style="display:none;">
-  <h3>Government &amp; Public Sector</h3>
-  <ul>
-    <li><a href="https://www.defense.gov/Experience-Careers/" target="_blank">U.S. Department of Defense</a></li>
-    <li><a href="https://www.vacareers.va.gov/" target="_blank">Veterans Affairs</a></li>
-    <li><a href="https://www.cia.gov/careers/" target="_blank">Central Intelligence Agency (CIA)</a></li>
-    <li><a href="https://www.dhs.gov/homeland-security-careers" target="_blank">Department of Homeland Security</a></li>
-    <li><a href="https://www.hhs.gov/jobs/" target="_blank">Health and Human Services</a></li>
-    <li><a href="https://www.epa.gov/careers" target="_blank">Environmental Protection Agency</a></li>
-    <li><a href="https://www.opm.gov/careers/" target="_blank">Office of Personnel Management</a></li>
-    <li><a href="https://careers.state.gov/" target="_blank">Department of State</a></li>
-    <li><a href="https://www1.nyc.gov/site/dcas/careers/careers.page" target="_blank">NYC Citywide Administrative Services</a></li>
-    <li><a href="https://www.panynj.gov/careers.html" target="_blank">Port Authority New York &amp; New Jersey</a></li>
-  </ul>
-</div>
 
-<!-- Financial Services -->
-<div class="industry-section" data-industry="Finance" style="display:none;">
-  <h3>Financial Services</h3>
-  <ul>
-    <li><a href="https://careers.jpmorgan.com/us/en/home" target="_blank">JPMorgan Chase</a></li>
-    <li><a href="https://careers.bankofamerica.com/en-us/" target="_blank">Bank of America</a></li>
-    <li><a href="https://www.wellsfargo.com/about/careers/" target="_blank">Wells Fargo</a></li>
-    <li><a href="https://jobs.citi.com/" target="_blank">Citibank</a></li>
-    <li><a href="https://www.goldmansachs.com/careers/" target="_blank">Goldman Sachs</a></li>
-  </ul>
-</div>
 
-<!-- Manufacturing & Consumer Goods -->
-<div class="industry-section" data-industry="Manufacturing" style="display:none;">
-  <h3>Manufacturing &amp; Consumer Goods</h3>
-  <ul>
-    <li><a href="https://www.pgcareers.com/" target="_blank">Procter &amp; Gamble</a></li>
-    <li><a href="https://jobs.gecareers.com/global/en" target="_blank">General Electric</a></li>
-    <li><a href="https://corporate.ford.com/careers.html" target="_blank">Ford</a></li>
-    <li><a href="https://www.3m.com/3M/en_US/careers-us/" target="_blank">3M</a></li>
-    <li><a href="https://careers.walmart.com/" target="_blank">Walmart</a></li>
-    <li><a href="https://jobs.target.com/" target="_blank">Target</a></li>
-    <!-- New Addition -->
-    <li><a href="https://www.tesla.com/careers" target="_blank">Tesla</a></li>
-  </ul>
-</div>
 
-<p class="company-note">
-  <em>Note:</em> This list is not exhaustive. I’m sure I have missed many companies, but I hope this list serves as a solid starting point for your job search. Any organizations with HR departments or a focus on enhancing people processes should have a place for I/O Psychology professionals. 
-</p>
+## 🤔 What makes them fundamentally different: the mathematical assumption
 
-## 📜 Resume & Cover Letter Guide
-<div style="text-align: center;">
-<iframe 
-  src="https://cdn-careerservices.fas.harvard.edu/wp-content/uploads/sites/161/2024/08/2024-HES_resume-and-letter.pdf#toolbar=1&navpanes=1&scrollbar=1" 
-  width="80%" 
-  height="800px">
-  This browser does not support PDFs. Please download the PDF to view it: 
-  <a href="https://cdn-careerservices.fas.harvard.edu/wp-content/uploads/sites/161/2024/08/2024-HES_resume-and-letter.pdf">Download PDF</a>.
-</iframe>
-</div>
+The major difference is how each method treats variance:
 
-## 🎙️ Interview Guide
+#### EFA
 
-Big shoutout to [David Paykin](https://www.linkedin.com/in/davidpaykin/) for creating a comprehensive Interview Guide and making it accessible to everyone. Special thanks to my mentor, [Allison Tsao](https://www.linkedin.com/in/allison-tsao/), for sharing this guide with me.
+- The diagonal of the covariance matrix < 1
+- Because variance is split into shared and unique parts
+- The diagonal only contains shared variance (communalities)
+- Meaning: EFA assumes variables have unique variance and measurement error
 
-<div style="text-align: center;">
-  <iframe 
-    src="Interview Guide - Create Your Own Copy.pdf#toolbar=1&navpanes=1&scrollbar=1" 
-    width="80%" 
-    height="600px" 
-    style="border: none;">
-    This browser does not support iframes. Please download the PDF to view it:
-    <a href="assets/example.pdf">Download PDF</a>.
-  </iframe>
-</div>
+#### PCA
 
-<p style="text-align: center;">
-  <a href="https://docs.google.com/document/d/17VC1CWMnBb4jN_TdHwKQacJwTjToji08pSyFRwvrQ_s/edit?usp=sharing" target="_blank">Make a Copy</a>
-</p>
+- The diagonal is constrained to be 1
+- Meaning it assumes each variable’s entire variance is shared with all other variables (aka items)
+- No measurement error, no unique variance
+- This is almost never true in real data
 
-<br></br>
+This is why PCA is not good for theory building. It doesn’t model latent constructs. It doesn’t account for measurement error. It just compresses variables.
 
-#### I-O Specific Interview Questions (I Faced)
+## 📜 So when should you use which?
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-  <div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Introducing I/O Psychology</h3>
-  <p>How would you explain Industrial/Organizational Psychology to someone who is unfamiliar with the field?</p>
-</div>
+#### Use EFA when
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Assessment Validation Process</h3>
-  <p>Can you walk me through your approach to developing and validating an assessment?</p>
-</div>
+- You want to discover latent constructs
+- You care about theory
+- You want to model measurement error
+- You’re building a scale
+- You’re doing psychometric work
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Job Analysis</h3>
-  <p>Can you walk me through your process for conducting a comprehensive job analysis?</p>
-</div>
+(Use Principal Axis Factoring or Maximum Likelihood—not PCA—as your extraction method in SPSS.)
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Intervention Effectiveness</h3>
-  <p>What methods would you use to evaluate the effectiveness of an organizational intervention?</p>
-</div>
+#### Use PCA when
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Explaining Regression Analysis</h3>
-  <p>How would you justify the need for regression analysis to an executive without a statistical background?</p>
-</div>
+- You purely want to reduce the number of variables
+- You don’t care about underlying constructs
+- You want to avoid multicollinearity
+- You want fewer predictors for machine learning models
+- You’re trying to simplify a large dataset
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Complex Data Analysis</h3>
-  <p>Can you describe a complex data analysis project you managed? Include your approach to data cleaning, transformations applied, and result interpretation.</p>
-</div>
+PCA is great for data prep—but not for understanding psychological constructs.
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Handling Missed Deadlines</h3>
-  <p>Tell me about a time you missed a deadline. How did you handle the situation and what did you learn from it?</p>
-</div>
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Resolving Team Conflict</h3>
-  <p> Can you share an example of a conflict with a team member and explain how you resolved it?</p>
-</div>
+## 🧠 Final Thoughts
 
-<div style="border: 2px solid #007acc; border-radius: 8px; padding: 1rem;">
-  <h3 style="margin-top: 0;">Time Management</h3>
-  <p>Can you describe a situation where you had to juggle several deadlines at once? What strategies did you use?</p>
-</div>
+EFA and PCA look similar, but they answer completely different questions. When we mix them up, we unintentionally do bad science—not because we want to, but because the software makes it too easy to click the wrong thing.
 
-</div>
+So let’s be intentional about the tools we use. If you're trying to understand a psychological construct, stick with EFA. If you're just trying to shrink a large set of variables for practical reasons, PCA can be your friend.
 
 
 ## 🔗 References
 
-Muchinsky, P. M., & Culbertson, S. S. (2020). *Psychology Applied to Work: An Introduction to Industrial and Organizational Psychology (12th ed.).* Wadsworth Publishing.
+Tabachnick, B. G., & Fidell, L. S. (2018). Using multivariate statistics (7th ed.). Pearson.
 
-Spector, P. E. (2021). *Industrial and Organizational Psychology: Research and Practice (8th ed.).* Wiley.
+user_anon (https://stats.stackexchange.com/users/125475/user-anon), Fundamental difference between PCA and FA?, URL (version: 2018-09-14): https://stats.stackexchange.com/q/366970
+
+
