@@ -51,9 +51,19 @@ When I’m not diving into data or teaching statistics as an adjunct professor, 
 
 ## 🎙️Presentations
 
+-   **Sijan, M.**, Bixter, M. T. (under review). Using BERT embeddings to predict job satisfaction and turnover intention. *Journal of Computational Social Science.*
+
+-   **Sijan, M.**, Echevarria, N., Herrera, I., Hollow, H., & Bixter, M. T. (under review). *Evaluating the validity, reliability, and fairness of AI-based assessments in personnel selection: A systematic review \[*Poster\]. Society for Industrial and Organizational Psychology Annual Conference, New Orleans, Louisiana, United States.
+
+-   Crowley, L., **Sijan, M.** (under review). *When problems predict profits: Insights from anonymous Glassdoor reviews* \[Poster\]. Society for Industrial and Organizational Psychology Annual Conference, New Orleans, Louisiana, United States.
+
 -   Sijan, M. (Co-chair), Belwalkar, B. B. (Co-chair) & Mracek, D. (Discussant) (2025). Power of NLP and LLMs: Turning I/O Research and Practice into a Textual Adventure \[Symposium\]. Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.\*
 
 -   Huynh, C., Elfeki, Y., Sijan, M. (2025). Modeling Latent Constructs in SJT Using Pseudo-Factor Analysis \[Poster\]. Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.\*
+
+-   **Sijan, M.**, Bixter, M. T. (2025). *Testing the latent structure of a measure of delay of gratification* \[Poster\]. 2025 Montclair State
+
+    University Graduate Research Symposium, Montclair, NJ, United States.
 
 -   Sijan, M., Bixter, M. T. (2024). Using NLP to Predict Job Satisfaction and Turnover Intention \[Poster Presentation\]. The Psychonomic Society Annual Meeting, New York, NY, United States.
 
@@ -61,7 +71,9 @@ When I’m not diving into data or teaching statistics as an adjunct professor, 
 
 -   Sijan, M., Kramer, M. (Co-Chair), Kulas, J. (Co-Chair), Helisch, R., Lancuna, L., Defabiis, M., Hunt, L., Notari, K., (2024). Unlocking the value of IO Psychology Student Consulting in Higher Education \[Panel Presentation\]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.
 
--  Elfeki, Y., Huynh, C., Sijan, M., Salter, N. P. (2024). An Exploration of Masculinity and Femininity Perceptions Across Monoracial and Biracial Identities using StyleGAN Imagery \[Symposium\]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States. 
+-   Elfeki, Y., Huynh, C., Sijan, M., Salter, N. P. (2024). An Exploration of Masculinity and Femininity Perceptions Across Monoracial and Biracial Identities using StyleGAN Imagery \[Symposium\]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.
+
+-   **Sijan, M.**, Bixter, M. T. (2024). *Using NLP to predict job satisfaction and turnover intention* \[Poster\]. 2024 Montclair State University Graduate Research Symposium, Montclair, NJ, United States.
 
 -   Hunt, L., Bragger, J., Kubu, G., Abbasi, F., & Sijan, M. (2024). Leading the Goals' Rush: How leadership mindsets make all the difference \[Poster Presentation\]. Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.
 
