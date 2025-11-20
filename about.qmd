@@ -49,7 +49,7 @@ When I’m not diving into data or teaching statistics as an adjunct professor, 
 
 -   *HR Reporting Intern*, [City Bank Limited](https://www.citybankplc.com/home) \| May 2021 - August 2021
 
-## 🎙️Presentations
+## 🎙️Publications & Presentations
 
 -   **Sijan, M.**, Bixter, M. T. (under review). Using BERT embeddings to predict job satisfaction and turnover intention. *Journal of Computational Social Science.*
 
