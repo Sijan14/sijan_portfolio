@@ -25,7 +25,7 @@ So my “better” option is to say the whole thing: Industrial-Organizational P
 ## 🤨 The Inevitable Question: “Okay, But What Is That?”
 
 ::: {style="text-align: center;"}
-<img src="mysterious_work.png" alt="mysterious_work" width="500"/>
+<img src="mysterious_work.png" alt="mysterious_work" style="max-width: 60%; height: auto;" />
 :::
 
 ::: {style="font-size: 12px; margin-top: 5px; text-align: center;"}
