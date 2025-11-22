@@ -1,0 +1,49 @@
+---
+title: "So… What Do You Study Again? My Daily Struggle Explaining I/O Psychology to Strangers"
+description: "Ever struggled to explain your field to someone outside your bubble? Welcome to my journey as an Industrial-Organizational psychologist—where I try to make sense of a often misunderstood field and my attempts at explaining it to others"
+date: 2025-06-12
+categories: [I/O Psychology]
+citation: 
+  url: https://sijan14.github.io/sijan_portfolio/posts/2025-06-12-IO-Psychology/ 
+image: thoughts.png
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+format:
+  html:
+    embed-resources: true
+    highlight-style: gruvbox-dark
+editor: visual
+---
+
+## 🤔 The Field That Confuses Everyone
+
+Every time someone asks me what I am going to school for, I brace myself—because I know what’s coming. I have to say this long string of academic gibberish that sounds made up even to me: Industrial-Organizational Psychology.
+
+I don’t usually say “I/O Psychology,” because I don’t expect anyone outside my small academic bubble to know what the acronym means. And honestly, when I say “I/O,” anyone from a computer science background thinks I am talking about input/output. Attaching psychology to that makes it more confusing. To be fair, our acronym does us no favors.
+
+So my “better” option is to say the whole thing: Industrial-Organizational Psychology. A mouthful. I can count on one hand the number of times someone has understood me the first time I’ve said it. Half the time, I have to repeat myself slower, and even then, it still feels somewhat pretentious. Like, who do I think I am, announcing both “industry” and “organization” in the same breath? Sometimes I wish I had just gone the clinical route—not because it was ever my first love in psychology or something I think I would be particularly good at, but because at least that title wouldn’t make me sound pretentious at the early onset of a conversation with a stranger.
+
+## 🤨 The Inevitable Question: “Okay, But What Is That?”
+
+::: {style="text-align: center;"}
+<img src="mysterious_work.png" alt="mysterious_work" width="500"/>
+:::
+
+::: {style="font-size: 12px; margin-top: 5px; text-align: center;"}
+Source: iopsycmemes
+:::
+
+And honestly, the title is just the first hurdle. The next (and worse) hurdle is the inevitable follow-up question: “What the hell is that?” if the person is polite, which is often the case: “Tell me more about what that means.” At this point, I almost prefer people assuming I provide therapy to stressed-out employees. At least that sounds tangible— even if I am nowhere near qualified for that profession.
+
+When I first started grad school, the “tell me more” question used to absolutely expose me. In my head, I would be thinking: [Sir, I’m still trying to figure that out myself—how do you expect me to explain it to you?]{.em} I would mumble something like “Well, it’s a lot of things… there’s the industrial side… and then the organizational side…” and then I would start naming random popular constructs like job satisfaction and organizational commitment. By the end of my explanation, they had learned absolutely nothing. I think a lot of management consultants can relate—the more indescribable your work sounds, the cooler people assume your work is. Maybe that’s why academic writing is so unnecessarily complex: so we can feel good about ourselves for producing sentences which can be comprehended only by people with certain training (I’m joking… mostly)
+
+But jokes aside, those conversations always started off awkward, not because the field is complicated, but because I tended to over-explain. Most people just want the gist. And I have realized that trying to sound cool or impressive actually gets in the way of building real connections. So, I have been working on simplifying how I describe what I do—without losing what makes it meaningful.
+
+## 🤞 Here’s my current attempt (still a work in progress):
+I/O psychologists are basically the dark horses of psychology (at least in some ways). No one knows who we are, but we quietly do important work inside organizations. We help match the right people with the right jobs. We help employees bring their best selves to work by measuring their experiences and behaviors, understanding what’s helping or hurting them, and implementing changes. We help people grow, feel supported, make connections, stay productive, and succeed. Our work benefits both organizations and their best asset—people.
+
+At the core, we’re curious about how people function at work: what motivates them, what challenges them, what resources matter, and what strategies actually help. And we use science and statistics to build tools, solutions, and systems that make work better for everyone.
+
+It’s still a bit long, and I’m still trimming it down—but at least it captures the heart of what I do without overwhelming strangers at parties.
+
+What I’d love is to hear how other people explain our field to friends and family who have no idea what I/O psychology is. Please email me - sijana1@montclair.edu (since I still haven’t figured out how to allow comments on my blog). With everyone’s help, maybe I can finally land on a version simple enough to explain to my parents. It’s been four years and I still haven’t cracked that one. They have always trusted me to choose my own path, and for that, I am grateful.
+
