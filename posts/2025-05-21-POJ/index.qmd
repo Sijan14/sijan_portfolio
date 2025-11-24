@@ -1,0 +1,79 @@
+---
+title: "Fairness at Work: More Than Objective System, It’s Perception"
+description: "Growing up in a third world country, my sense of fairness was shaped by our history and upbringing. In this blog, I break down a concept that’s personal to me—the four dimensions of organizational justice and why they matter. Ultimately, I try to show why fairness must be both practiced and perceived to truly make a difference at work."
+date: 2025-05-21
+categories: [I/O Psychology]
+citation: 
+  url: https://sijan14.github.io/sijan_portfolio/posts/2025-05-21-POJ/ 
+image: justice.png
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+format:
+  html:
+    embed-resources: true
+    highlight-style: gruvbox-dark
+editor: visual
+---
+
+## 🛺 Sense of justice rooted in history
+
+Out of all the constructs we love to discuss in I/O Psychology, perceptions of justice—or simply, fairness perception—speaks to me on a personal level. Growing up in Bangladesh, fairness wasn’t just an abstract idea—it was woven into our history. If you’ve taken a course called multilevel modeling, you know why we compare people within their own reference groups. Context matters, and mine shaped how I see justice.
+
+My parents, like many in South Asia, carried a quiet anxiety rooted in generations of injustice and uncertainty. There’s an old Sanskrit saying, *Atithi Devo Bhava*—“Guests are gods” so we treat them as such. We welcomed the British as guests, happily trading spices… until they overstayed a couple extra centuries on their guest pass. Lesson learned: vet them out before you let them in. A practice that is popular in American visa offices across the globe.
+
+Fast forward to 1947. East Bengal became part of Pakistan. It was supposed to be the happy ending, but happy endings tend to show up a little less often outside of movies. Our fellow Pakistani “brothers” treated East Bengal like a step-sibling asking for their fair share of the family inheritance. We had less opportunity, less funding, less of just about everything—and on top of that, we were told to switch our mother tongue and culture to fit into a country that didn’t consider us equals. So, naturally, we fought back—for our rights, for the fairness we hold dear—and in 1971, Bangladesh was born.
+
+That history shaped our values: be cautious, be fair, be just. Even my alma mater, Jhenidah Cadet College, drilled this into us with its motto: *The learned are judicious*. So yes—fairness is personal to me. And when I entered graduate school and learned how perceptions of justice influence morale, commitment, and performance, something clicked. I understood why people in Bangladesh take to the streets—not from jealousy, but for their rights, because they believe the system has failed them, and they respond to systems they perceive as unfair. We’re all dealt different cards at birth; the least we can ask for is a fair system. That’s when I found my calling: building systems that are just, valid, and reliable. Psychometrics became my language; data science became my toolbox. 
+
+While I could happily spend hours diving into statistics and measurement, I will leave that for another time. Instead, I would like to focus on organizational justice for the rest of this blog—what it looks like in the workplace, how it affects employees, and why organizations should care—illustrating the construct through examples and research findings.
+
+## ⚖️ Breaking down Organizational Justice
+
+In the workplace, “justice” isn’t just one thing. Researchers generally break it into four types:
+
+-   [Distributive Justice:]{style="font-weight: bold;"} This is about fairness in outcomes. Three classic principles guide it: 1) Equity: rewards match contributions. 2) Equality: everyone gets the same. 3) Need: those who need more receive more (Huang et al., 2017)
+
+-   [Procedural Justice:]{style="font-weight: bold;"} This focuses on how decisions are made. Were rules applied consistently? Was bias minimized? Was the process based on accurate, relevant information? (Huang et al., 2017)
+
+-   [Interpersonal Justice:]{style="font-weight: bold;"} This is about how people are treated—respect, politeness, dignity (Bies, 2015). Small behaviors, big impact.
+
+-   [Informational Justice:]{style="font-weight: bold;"} This relates to the quality of communication: Was information shared honestly, thoroughly, equally, and at the right time? (Greenberg, 1993).
+
+Now, why does all this matter? Because these layers operate in our minds even when we can’t quite articulate what feels “off”, quietly influencing our mood, motivation, performance and wellbeing.
+
+##### Take distributive justice:
+
+Imagine you land your dream job. You get along with everyone, you’re paid well—but then you find out a coworker received a bigger bonus despite having the same contributions. Or you stay long after office hours and put in extra work during the weekend, yet everyone gets the same end-of-year reward. Your perception—not the objective policy—drives how you feel.
+
+##### Or consider procedural justice:
+
+When a high-visibility project opens up, you want the selection process to be based on merit—not on who plays golf with the boss. If you think the system is rigged, your motivation slips.
+The bottom line: when employees sense unfairness, everything else starts to unravel.
+
+## 👀 Why Perception of Justice Matters More Than You Think
+
+A highly motivated employee can quickly disengage if they believe the system favors some over others. That’s how quiet quitting begins. That’s why Gen Z switches jobs faster than soccer players switch hairstyles—when people sense unfairness, they leave.
+
+And turnover is expensive. Depending on the role, replacing an employee can cost anywhere from 30% to 150% of their salary (G&A Partners, 2024). Redistribution of workload, recruitment, onboarding—it all adds up. Worse, if your hiring system is biased, you might end up with a false positive—a bad fit who costs you even more.
+
+#### Research backs this up:
+
+When employees perceive injustice, they often reciprocate through reduced effort or even counterproductive behaviors such as theft, withdrawal, or intentionally slowing work (Rupp et al., 2014). Justice perceptions shape who employees blame for unfairness and how they respond.
+
+#### But the reverse is also true:
+
+Employees who feel fairly treated show stronger job attitudes, better performance, and higher organizational commitment (Colquitt et al., 2001; Rupp et al., 2014). They brag about their company, act generously toward coworkers, and become ambassadors on social media—driving talent and customers your way.
+
+## 🚨 Bottom Line 
+
+Fairness or the perception of it isn’t a “nice-to-have.” It’s a strategic advantage. Organizations that take justice seriously—not only in objective policies but also in how those policies feel to employees—avoid costly turnover, boost morale, and cultivate healthier workplaces.
+
+And honestly, who wouldn’t want to work for a company that not only treats people fairly but also ensures they perceive it that way?
+
+## 🔗 References
+Bies, R. J. (2015). Interactional justice: Looking backward, looking forward. The Oxford handbook of justice in the workplace, 1, 89-107.
+
+G&A Partners. (2024). How much does employee turnover really cost your business? G&A Partners. https://www.gnapartners.com/resources/articles/how-much-does-employee-turnover-really-cost-your-business
+
+Huang, J. L., Cropanzano, R., Li, A., Shao, P., Zhang, X. A., & Li, Y. (2017). Employee conscientiousness, agreeableness, and supervisor justice rule compliance: A three-study investigation. Journal of Applied Psychology, 102(11), 1564.
+
+Rupp, D. E., Shao, R., Jones, K. S., & Liao, H. (2014). The utility of a multifoci approach to the study of organizational justice: A meta-analytic investigation into the consideration of normative rules, moral accountability, bandwidth-fidelity, and social exchange. Organizational behavior and human decision processes, 123(2), 159-185.
