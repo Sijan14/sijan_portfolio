@@ -12,7 +12,7 @@ about:
       href: https://github.com/Sijan14
 ---
 
-Hi there! I'm Sijan (Yess! I go by my last name-I will tell you the story someday!). I’m a Ph.D. candidate in Industrial-Organizational Psychology with a concentration in Data Science. I also teach undergraduate statistics and have a passion for discussing topics like assessment development, fairness, validity, psychometrics, data visualization, natural language processing (NLP), and artificial intelligence (AI). Poke around my website to learn more!
+Hi there! I’m Sijan (yep, I go by my last name—ask me about the story someday!). I’m a Ph.D. student in Industrial-Organizational Psychology, with a concentration in Data Science. Welcome to my little corner of the internet—a place where I talk unfiltered about the things that fascinate me, the things I think everyone should know, and the ideas I am trying to nurture. I am also endlessly curious about how we can build better, fairer tools to measure human behavior—sometimes using NLP, AI, and, of course, good old psychometrics. Oh, and I teach undergraduate statistics too. Poke around, explore, and maybe learn something new—or at least get a peek into how my mind works!
 
 <div style="margin: 20px 0;">
   <iframe 
