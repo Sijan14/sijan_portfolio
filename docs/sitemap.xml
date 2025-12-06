@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/posts.html</loc>
-    <lastmod>2025-11-30T17:48:59.635Z</lastmod>
+    <lastmod>2025-12-06T05:19:46.361Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/apps.html</loc>
@@ -38,11 +38,11 @@
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/index.html</loc>
-    <lastmod>2025-11-22T15:38:52.917Z</lastmod>
+    <lastmod>2025-12-06T04:38:58.110Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/about.html</loc>
-    <lastmod>2025-11-20T16:22:50.891Z</lastmod>
+    <lastmod>2025-12-06T04:37:09.443Z</lastmod>
   </url>
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/posts/2025-06-12-IO-Psychology/index.html</loc>
@@ -55,5 +55,9 @@
   <url>
     <loc>https://sijan14.github.io/sijan_portfolio/posts/2025-06-25-Central-Limit-Theorem/index.html</loc>
     <lastmod>2025-11-30T17:48:55.511Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sijan14.github.io/sijan_portfolio/posts/2025-07-16-natural-e/index.html</loc>
+    <lastmod>2025-12-06T05:19:42.910Z</lastmod>
   </url>
 </urlset>

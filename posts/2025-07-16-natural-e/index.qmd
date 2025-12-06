@@ -1,0 +1,199 @@
+---
+title: "The magic in our nature: The e" 
+description: "My relationship with math has been a winding road, yet ideas like natural e have rekindled my fascination. I love being awed by the hidden patterns of the universe, and e represents the pinnacle of that wonder—a constant that quietly governs growth and change across nature, finance, and life itself."
+date: 2025-07-16
+categories: [Statistics, Math]
+citation: 
+  url: https://sijan14.github.io/sijan_portfolio/posts/2025-07-16-natural-e/ 
+image: universe.png
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+format:
+  html:
+    embed-resources: true
+    highlight-style: gruvbox-dark
+editor: visual
+---
+
+## 🌟 Introduction
+
+For my final two years of high school, I got the chance to study at Mahindra United World College of India (MUWCI) —an international school that felt like a completely different planet compared to my military school. Suddenly, I was in classes with all genders, no one was forcing me to do morning PT, and strict dress codes were replaced by actual freedom. And I didn’t complain—until it came to math. Math had always been one of my favorite subjects, and I was pretty good at it. My placement test backed that up, placing me into Math HL, the highest of the three IB levels. But IB HL math terrified me. Maybe I struggled with my South African professor’s accent. Maybe I wasn’t paying enough attention. Realistically, it was both. The whole experience rattled my confidence enough that, once I got to undergrad, I avoided math courses altogether—aside from the compulsory courses I needed to graduate.
+
+But then grad school happened. Statistics became a huge part of my life—whether I liked it or not. And somewhere in there, I fell in love with math again. I realized that so many of the questions my mind constantly asks can only be answered through math. It opened up entire worlds of research for me. Now I even teach statistics to undergrads—life can be so funny—proudly sharing the weird, twisty path that brought me back to a subject I once ran from.
+
+::: {style="text-align: center;"}
+<img src="math_hl.jpg" alt="math_hl" width="400" style="border: 0.5px solid gray; border-radius: 0;"/>
+:::
+
+## ♾️ So why am I telling you about my relationship with math?
+
+First, because I can. This is my blog—no peer review, no reviewer #2 breathing down my neck. If I wanted to write about a dream I had last night, I absolutely could. And yes, I know I always talk like I’m addressing a massive audience…but let’s be honest: I doubt even one person is reading this (besides my girlfriend, and only because I make her sometimes). But that’s the beauty of it. This little corner of the internet is my safe space—my meditation through writing.
+
+Second, I’m fascinated—mesmerized—even running out of cooler adjectives—because math is universal. It sits at the core of human existence, a lens for understanding the invisible rules that shape our world. Every product we touch, from toothbrushes to phones to airplaces, exists because of mathematical principles. Honestly, the invention of mathematics feels almost as important as the discovery of fire. Fire helped us survive; math helped us build everything else.
+
+And today, I want to talk about one piece of that magic—one number that shows up everywhere, quietly running the universe from behind the curtain: The natural number [e]{style="font-weight: bold;"}. Yes, e — also known as Euler’s number. Value = 2.7182818…
+
+## 🪄 Why Is "e" a Magical Number?
+
+Becasue e shows up everywhere—in population growth, disease spread, radioactive decay, loan payments, physics, biology, and even in your savings account. It’s called natural because it appears naturally in any process where something keeps growing or changing a little bit at a time. That's why it's at the core of calculus (the math of growth).
+
+But you don’t need calculus to understand it. The easiest way to feel its magic is through compound interest.
+
+#### Compound Interest Example
+
+Imagine you have \$1, and a miracle bank gives you 100% interest per year.
+
+##### Case 1: Interest once per year
+
+-   You start with \$1
+-   100% interest → you end with \$2 Easy.
+
+##### Case 2: Interest twice per year
+
+Instead of 100% once, the bank gives: 
+
+- 50% after 6 months 
+- 50% after another 6 months
+- Your money becomes: $(1 + \tfrac{1}{2})^2 = \$2.25$
+
+##### Case 3: Interest every month (12 times) 
+
+- <details>
+<summary> Your money becomes $\approx$ 2.613</summary> $(1 + \tfrac{1}{12})^{12} \approx 2.613$
+</details> 
+- More compounding → more growth.
+
+##### Case 4: Interest every day (365 times) 
+
+- <details>
+<summary> Your money becomes $\approx$ 2.714</summary>
+$(1 + \tfrac{1}{365})^{365} \approx 2.714$
+</details>
+
+- Even closer to something…
+
+##### Case 5: Interest every second 
+
+- (365 days × 24 hours × 60 minutes × 60 seconds) = 31,536,000 seconds
+- <details> 
+<summary> Your money becomes $\approx$ 2.71828 </summary>
+$(1 + \tfrac{1}{31{,}536{,}000})^{31{,}536{,}000} \approx 2.71828$</details>
+- Your ending amount gets a tiny bit bigger—but not by much.
+
+##### Case 6: Interest infinitely often 
+
+- Now imagine compounding faster and faster, without stopping. 
+- As we increase the number of times we compound: 
+  - the final amount keeps rising 
+  - but it rises slower and slower 
+  - <details> 
+<summary> and it settles down to a very specific number $\approx$ 2.7182881828… </summary> $\lim_{n \to \infty} (1 + \tfrac{1}{n})^{n} = 2.718281828…$
+  </details>
+  
+<div style="text-align:center; font-weight:bold; font-size:2rem;">
+That number is e.
+</div>
+
+<br></br>
+
+```{r, warning=FALSE, echo=FALSE}
+library(ggplot2)
+
+# Compounding frequencies (simplified)
+n <- c(1, 2, 12, 365, 1e6)  # yearly, semiannual, monthly, daily, very large (approx infinity)
+amount <- (1 + 1/n)^n
+
+# Labels for the points
+labels <- c("Yearly", "Semiannual", "Monthly", "Daily", "Infinite")
+
+# Create a data frame
+df <- data.frame(
+  Compounding = labels,
+  n = n,
+  Amount = amount
+)
+
+# Plot
+ggplot(df, aes(x = n, y = Amount)) +
+  geom_point(size=3, color="blue") +
+  geom_line(color="blue") +  # line through points
+  geom_text(aes(label=Compounding), vjust=-0.5) +
+  geom_hline(yintercept=exp(1), linetype="dashed", color="red") +
+  scale_x_log10() +
+  labs(
+    x = "Compounding Frequency (log scale)",
+    y = "Ending Amount",
+    title = "Red dashed line = e (2.71828)"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),          # remove grid
+    axis.line = element_line(color="black"), # solid x and y axis lines
+    plot.title = element_text(hjust = 0.5, color = "red", size = 12)
+  )
+
+```
+
+
+  
+### What’s amazing is this: 
+
+You can compound interest as fast as you want— every year, every month, every day, every second— and the result will never go above e.
+
+```{=html}
+<style>
+.spotlight {
+  border-left: 6px solid #d9480f;
+  background: linear-gradient(180deg, #fff7ed, #fffaf0);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0 1.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  font-size: 1.08rem;
+}
+.spotlight strong { color: #b03a2e; }
+figcaption { font-size: 0.95rem; color: #555; margin-top: 0.4rem; }
+</style>
+```
+
+That limit—the [maximum possible money you can get from 100% growth over one period]{style="font-weight: bold;"}—that number is e. e is what happens when you push compounding interest to the absolute limit.
+
+::: spotlight
+
+This is why this number is called natural. It’s literally baked into how growth behaves in our universe. And we are not only talking about money growth, growth of population, disease and every other things follows this. [Everything grows in the exponent of this natural e]{style="font-weight: bold;"}. 
+
+:::
+
+Once you accept that continuously compounding 100% interest gives you $e$, you can generalize it.
+
+- Instead of a 100% growth rate ($r = 1$), what if your rate is $r$?
+- Instead of 1 year, what if your time is $t$ years?
+
+That’s where this formula comes into play:
+
+$$
+\Huge e^{rt}
+$$
+
+Where:
+
+- $r$ = growth rate
+- $t$ = number of time periods
+
+Example:
+If you have a 200% growth rate ($r = 2$) for 5 years ($t = 5$):
+
+$$
+ e^{rt} = e^{2*5} = e^{10}
+$$
+
+This is why $e$ shows up everywhere—finance, biology, psychology, machine learning—anywhere something grows or changes continuously.
+
+## 💭 Concluding Thoughts
+
+Math really is the universe’s secret language. And one of its most surprising messages is this: no matter how often you compound—monthly, daily, every nanosecond—you can never outrun e.
+
+That’s pretty wild, isn't it?? It means the universe has a built-in speed limit for pure exponential growth. Whether you’re watching an investment grow, a species reproduce, or a machine-learning model update its weights, e is quietly working in the background—setting the pace.
+
+Somehow, learning this brought me back to why I fell in love with math in the first place. I’m genuinely glad I rediscovered that passion—and that it happened through e, a constant that reminds us that change is inevitable, always unfolding, always compounding.
+
+And realizing that a single constant governs so many forms of change? That still feels like magic to me.
